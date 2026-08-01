@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <mask id="fade4">
+      <linearGradient id="fadeGrad4" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#000"/>
+        <stop offset="0.18" stop-color="#fff"/>
+        <stop offset="0.82" stop-color="#fff"/>
+        <stop offset="1" stop-color="#000"/>
+      </linearGradient>
+      <rect x="0" y="0" width="1200" height="630" fill="url(#fadeGrad4)"/>
+    </mask>
+  </defs>
+  <rect width="1200" height="630" fill="#100f0c"/>
+  <g mask="url(#fade4)" stroke="#2b2620" stroke-width="1">
+    <line x1="0" y1="44" x2="1200" y2="44"/><line x1="0" y1="88" x2="1200" y2="88"/>
+    <line x1="0" y1="132" x2="1200" y2="132"/><line x1="0" y1="176" x2="1200" y2="176"/>
+    <line x1="0" y1="220" x2="1200" y2="220"/><line x1="0" y1="264" x2="1200" y2="264"/>
+    <line x1="0" y1="308" x2="1200" y2="308"/><line x1="0" y1="352" x2="1200" y2="352"/>
+    <line x1="0" y1="396" x2="1200" y2="396"/><line x1="0" y1="440" x2="1200" y2="440"/>
+    <line x1="0" y1="484" x2="1200" y2="484"/><line x1="0" y1="528" x2="1200" y2="528"/>
+    <line x1="0" y1="572" x2="1200" y2="572"/>
+  </g>
+  <!-- checklist -->
+  <g transform="translate(430,220)">
+    <g stroke="#2dd4bf" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M0 8 L14 22 L38 -10" transform="translate(0,0)"/>
+      <path d="M0 8 L14 22 L38 -10" transform="translate(0,72)"/>
+      <path d="M0 8 L14 22 L38 -10" transform="translate(0,144)"/>
+      <path d="M0 8 L14 22 L38 -10" transform="translate(0,216)"/>
+    </g>
+    <g stroke="#6c6f8c" stroke-width="7" stroke-linecap="round">
+      <line x1="70" y1="12" x2="330" y2="12"/>
+      <line x1="70" y1="84" x2="290" y2="84"/>
+      <line x1="70" y1="156" x2="310" y2="156"/>
+      <line x1="70" y1="228" x2="260" y2="228"/>
+    </g>
+  </g>
+  <!-- magnifying glass -->
+  <g transform="translate(840,330)" stroke="#f0b429" fill="none">
+    <circle r="100" stroke-width="10"/>
+    <line x1="72" y1="72" x2="150" y2="150" stroke-width="16" stroke-linecap="round"/>
+  </g>
+</svg>

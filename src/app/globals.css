@@ -1,0 +1,244 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ─── Design tokens ──────────────────────────────────────────────────
+   Single source of truth — every colour, size, and duration used on
+   this site is declared here and nowhere else. The palette is drawn
+   from double-entry bookkeeping states, not decoration: indigo is the
+   brand, teal is "this reconciles," gold is "flagged / compliance."
+   ────────────────────────────────────────────────────────────────── */
+@theme {
+  /* Paper — near-white in light mode, near-black in dark */
+  --color-paper: #fdfcfa;
+  --color-paper-raised: #ffffff;
+  --color-mist: #f5f4f0;
+  --color-mist-strong: #ece9e2;
+
+  /* Ink */
+  --color-ink: #191611;
+  --color-ink-soft: #5c574d;
+  --color-ink-faint: #948d7d;
+
+  /* Rule / border */
+  --color-rule: #e6e2d8;
+  --color-rule-strong: #d3ccbc;
+
+  /* Brand — indigo */
+  --color-brand: #4338ca;
+  --color-brand-ink: #4338ca;
+  --color-brand-soft: #eeecfd;
+
+  /* Balance — teal, "this reconciles" */
+  --color-balance: #0f766e;
+  --color-balance-soft: #e6f5f3;
+
+  /* Compliance / flagged — gold */
+  --color-gold: #b45309;
+  --color-gold-soft: #fbf0e2;
+
+  /* Typography */
+  --font-serif: var(--font-fraunces), ui-serif, Charter, Georgia, serif;
+  --font-sans: var(--font-inter), -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  /* Hero wordmark only — the high-contrast system serif from the original product deck. */
+  --font-display:
+    ui-serif, Charter, "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+
+  --shadow-sm: 0 1px 2px rgba(25, 22, 17, 0.05);
+  --shadow-md: 0 4px 16px rgba(25, 22, 17, 0.07);
+  --shadow-lg: 0 16px 40px -12px rgba(25, 22, 17, 0.18);
+
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Decorative "traffic light" dots for the browser-chrome screenshot frame — the
+     only place these colours are used, so they're tokens rather than inline hex. */
+  --color-dot-red: #ec6a5f;
+  --color-dot-yellow: #f4bf4f;
+  --color-dot-green: #61c454;
+}
+
+/* ─── Dark theme ─────────────────────────────────────────────────────
+   Redefines the same tokens — components never branch on theme
+   themselves, they just read the token. ────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-paper: #100f0c;
+    --color-paper-raised: #17150f;
+    --color-mist: #1a1712;
+    --color-mist-strong: #211d16;
+
+    --color-ink: #f3f1ea;
+    --color-ink-soft: #b6b0a0;
+    --color-ink-faint: #756e5d;
+
+    --color-rule: #2b2620;
+    --color-rule-strong: #3a352b;
+
+    --color-brand: #9b95f7;
+    --color-brand-ink: #9b95f7;
+    --color-brand-soft: #201d47;
+
+    --color-balance: #2dd4bf;
+    --color-balance-soft: #0f2c2a;
+
+    --color-gold: #f0b429;
+    --color-gold-soft: #2b2210;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 20px 48px -16px rgba(0, 0, 0, 0.55);
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-paper: #100f0c;
+  --color-paper-raised: #17150f;
+  --color-mist: #1a1712;
+  --color-mist-strong: #211d16;
+
+  --color-ink: #f3f1ea;
+  --color-ink-soft: #b6b0a0;
+  --color-ink-faint: #756e5d;
+
+  --color-rule: #2b2620;
+  --color-rule-strong: #3a352b;
+
+  --color-brand: #9b95f7;
+  --color-brand-ink: #9b95f7;
+  --color-brand-soft: #201d47;
+
+  --color-balance: #2dd4bf;
+  --color-balance-soft: #0f2c2a;
+
+  --color-gold: #f0b429;
+  --color-gold-soft: #2b2210;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 48px -16px rgba(0, 0, 0, 0.55);
+}
+
+:root[data-theme="light"] {
+  --color-paper: #fdfcfa;
+  --color-paper-raised: #ffffff;
+  --color-mist: #f5f4f0;
+  --color-mist-strong: #ece9e2;
+
+  --color-ink: #191611;
+  --color-ink-soft: #5c574d;
+  --color-ink-faint: #948d7d;
+
+  --color-rule: #e6e2d8;
+  --color-rule-strong: #d3ccbc;
+
+  --color-brand: #4338ca;
+  --color-brand-ink: #4338ca;
+  --color-brand-soft: #eeecfd;
+
+  --color-balance: #0f766e;
+  --color-balance-soft: #e6f5f3;
+
+  --color-gold: #b45309;
+  --color-gold-soft: #fbf0e2;
+
+  --shadow-sm: 0 1px 2px rgba(25, 22, 17, 0.05);
+  --shadow-md: 0 4px 16px rgba(25, 22, 17, 0.07);
+  --shadow-lg: 0 16px 40px -12px rgba(25, 22, 17, 0.18);
+}
+
+/* ─── Base layer ─────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Belongs on html, not body — overflow-x here alone (without overflow-y) makes the
+       UA compute overflow-y as auto per spec, turning body into its own scroll
+       container decoupled from window/html scrolling (breaks window.scrollTo,
+       scroll-behavior: smooth, and anchor-link jumps). */
+    overflow-x: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    text-wrap: balance;
+    margin: 0;
+    color: var(--color-ink);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .tabular,
+  table td,
+  table th {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  ::selection {
+    background: var(--color-brand-soft);
+    color: var(--color-brand-ink);
+  }
+}
+
+/* ─── Article typography ─────────────────────────────────────────────
+   Blog posts and help articles are rendered markdown → HTML — the
+   typography plugin's default gray scale is overridden here to read
+   through the same tokens as the rest of the site. ──────────────────── */
+.prose {
+  --tw-prose-body: var(--color-ink-soft);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-links: var(--color-brand-ink);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-bullets: var(--color-rule-strong);
+  --tw-prose-hr: var(--color-rule);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-brand);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-pre-bg: var(--color-mist-strong);
+  --tw-prose-pre-code: var(--color-ink);
+  --tw-prose-th-borders: var(--color-rule-strong);
+  --tw-prose-td-borders: var(--color-rule);
+}
+
+.prose :where(h1, h2, h3):not(:where([class~="not-prose"] *)) {
+  font-family: var(--font-serif);
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::before,
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+  content: "";
+}
+
+.prose :where(code):not(:where(pre code)):not(:where([class~="not-prose"] *)) {
+  background: var(--color-mist-strong);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-weight: 500;
+}
