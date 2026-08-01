@@ -2,13 +2,13 @@ name: Deploy
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
     inputs:
       branch:
         description: "Branch to build and deploy"
         required: true
-        default: "master"
+        default: "main"
 
 concurrency:
   group: deploy
