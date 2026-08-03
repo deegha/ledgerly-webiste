@@ -1,4 +1,4 @@
-import { onboardingUrl } from "@/lib/env";
+import Link from "next/link";
 
 const pills = [
   { label: "Double-entry core", tone: "brand" as const },
@@ -21,12 +21,12 @@ export function CtaBand() {
           Sales, purchases, inventory, fixed assets, budgets, banking, and Sri Lankan compliance —
           one ledger underneath all of it.
         </p>
-        <a
-          href={onboardingUrl}
+        <Link
+          href="/get-started"
           className="bg-brand mt-8 inline-block rounded-md px-6 py-3 text-sm font-medium text-white shadow-sm transition-opacity hover:opacity-90"
         >
           Get started
-        </a>
+        </Link>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
           {pills.map((pill) => (
             <span

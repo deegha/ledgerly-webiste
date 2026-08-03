@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { isNavActive, navLinks } from "@/lib/nav-links";
-import { onboardingUrl } from "@/lib/env";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -74,12 +73,12 @@ export function MobileNav() {
                 </Link>
               );
             })}
-            <a
-              href={onboardingUrl}
+            <Link
+              href="/get-started"
               className="bg-brand mt-6 rounded-md px-4 py-3 text-center text-sm font-medium text-white shadow-sm"
             >
               Get started
-            </a>
+            </Link>
           </nav>
         </div>
       )}

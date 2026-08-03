@@ -1,10 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LedgerTexture } from "@/components/ledger-texture";
 import { StatRow } from "@/components/stat-row";
 import { heroStats } from "@/lib/site-content";
-import { onboardingUrl } from "@/lib/env";
 
 const TARGET = 4210875.6;
 
@@ -69,12 +69,12 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">
-          <a
-            href={onboardingUrl}
+          <Link
+            href="/get-started"
             className="bg-brand rounded-md px-6 py-3 text-sm font-medium text-white shadow-sm transition-opacity hover:opacity-90"
           >
             Get started
-          </a>
+          </Link>
           <a
             href="#product"
             className="border-rule-strong text-ink hover:bg-mist rounded-md border px-6 py-3 text-sm font-medium transition-colors"
