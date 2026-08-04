@@ -5,3 +5,9 @@ export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://ledgerly.lk
   /\/$/,
   "",
 );
+
+// The app's login page — for visitors who already have an account. A plain
+// external link (not a Next.js Link — this crosses to a different app), same
+// convention the old onboardingUrl helper used before self-serve signup was
+// replaced by /get-started.
+export const signInUrl = `${process.env.NEXT_PUBLIC_APP_URL ?? ""}/login`;

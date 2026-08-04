@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { isNavActive, navLinks } from "@/lib/nav-links";
+import { signInUrl } from "@/lib/env";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -73,9 +74,15 @@ export function MobileNav() {
                 </Link>
               );
             })}
+            <a
+              href={signInUrl}
+              className="border-rule text-ink mt-6 rounded-md border px-4 py-3 text-center text-sm font-medium"
+            >
+              Sign in
+            </a>
             <Link
               href="/get-started"
-              className="bg-brand mt-6 rounded-md px-4 py-3 text-center text-sm font-medium text-white shadow-sm"
+              className="bg-brand mt-2 rounded-md px-4 py-3 text-center text-sm font-medium text-white shadow-sm"
             >
               Get started
             </Link>

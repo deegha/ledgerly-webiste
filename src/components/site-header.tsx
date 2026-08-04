@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { MobileNav } from "@/components/mobile-nav";
 import { SiteNavLinks } from "@/components/site-nav-links";
+import { signInUrl } from "@/lib/env";
 
 export function SiteHeader() {
   return (
@@ -12,6 +13,12 @@ export function SiteHeader() {
         </Link>
         <SiteNavLinks />
         <div className="flex items-center gap-2">
+          <a
+            href={signInUrl}
+            className="text-ink hover:bg-mist hidden rounded-md px-3.5 py-2 text-sm font-medium transition-colors sm:inline-block"
+          >
+            Sign in
+          </a>
           <Link
             href="/get-started"
             className="bg-brand rounded-md px-3.5 py-2 text-sm font-medium text-white shadow-sm transition-opacity hover:opacity-90 sm:px-4"
