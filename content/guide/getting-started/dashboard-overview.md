@@ -1,9 +1,11 @@
 ---
 title: "Understanding your dashboard"
 description: "What each stat card and chart on the Dashboard is actually reading from your books."
-order: 1
-verifiedAgainst: "invoicegen @ 2026-08-29, Acme Trading"
+order: 3
+verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
 related:
+  - /guide/getting-started/what-is-ledgerly
+  - /guide/reports/ar-ageing
   - /help/create-an-invoice
 ---
 
