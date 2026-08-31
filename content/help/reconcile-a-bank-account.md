@@ -25,3 +25,5 @@ The reconciliation summary shows three numbers at all times: the **statement bal
 If you matched the wrong lines, use **Unmatch** from the transactions screen — it's a normal, expected part of reconciling, not something to work around by force-completing with a difference left over.
 
 _See also: [What audit-ready books actually look like](/blog/getting-audit-ready-books) on the blog._
+
+_Read the full guide: [Reconciling a bank account](/guide/banking/reconciling) — the same steps in context, with what posts to the ledger and why._

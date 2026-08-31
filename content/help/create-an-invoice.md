@@ -32,3 +32,5 @@ You can't edit an issued invoice directly, even to fix a typo. Instead, issue a 
 Once issued, download the invoice as a PDF or send it to the customer. The invoice's status tracks automatically as payments come in — **Issued**, **Partially paid**, then **Paid** — computed from the actual customer payments recorded against it, not a manual status field anyone has to remember to update.
 
 _See also: [How to record a customer payment](/help/record-a-payment)._
+
+_Read the full guide: [Creating and issuing an invoice](/guide/sales/creating-an-invoice) — the same steps in context, with what posts to the ledger and why._

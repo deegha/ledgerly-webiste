@@ -26,3 +26,5 @@ For a new inventory item that already has stock on hand when you start using Led
 Items that are discontinued should be marked **inactive** rather than deleted — this keeps historical invoices and bills that reference the item intact and readable, while hiding it from new document line-item pickers.
 
 _See also: [FIFO vs. weighted average](/blog/fifo-vs-weighted-average) on the blog, for how to choose a costing method._
+
+_Read the full guide: [Items](/guide/items/adding-an-item) — the same steps in context, with what posts to the ledger and why._

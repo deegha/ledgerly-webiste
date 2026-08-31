@@ -25,3 +25,5 @@ Recording a payment posts a journal entry debiting the bank or cash account and 
 A posted payment can't be edited directly. If a payment was recorded in error — wrong amount, wrong invoice, wrong customer — void it and record a new, correct one. The void is visible in the invoice's history, so there's no gap in the trail.
 
 _See also: [How to create and issue an invoice](/help/create-an-invoice), [How to reconcile a bank account](/help/reconcile-a-bank-account)._
+
+_Read the full guide: [Recording a customer payment](/guide/sales/customer-payments) — the same steps in context, with what posts to the ledger and why._

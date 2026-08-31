@@ -23,3 +23,5 @@ A posted bill can't be edited directly. If the amount or line items were wrong, 
 For smaller purchases that don't go through a supplier bill — a taxi receipt, office supplies paid on the spot — use **Purchases → Expenses** instead. It posts directly without the bill/payment two-step, but still goes through the ledger the same way; nothing here is tracked outside the journal.
 
 _See also: [How to create and issue an invoice](/help/create-an-invoice) — the sales-side mirror of this workflow._
+
+_Read the full guide: [Recording a supplier payment](/guide/purchases/supplier-payments) — the same steps in context, with what posts to the ledger and why._

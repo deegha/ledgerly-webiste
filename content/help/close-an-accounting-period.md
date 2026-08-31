@@ -24,3 +24,5 @@ If an error is discovered in a period that's already hard-closed, you don't reop
 At fiscal year-end, closing the final period also generates the entry that zeroes out income and expense accounts into Retained Earnings, so the new fiscal year starts with a clean P&L and a carried-forward balance sheet — this happens as one reviewable, posted journal entry, not a silent batch process.
 
 _See also: the [ledger invariants](/#trust) on why a hard close can't be reopened._
+
+_Read the full guide: [Accounting periods: soft close, hard close, year-end](/guide/accounting/accounting-periods) — the same steps in context, with what posts to the ledger and why._
