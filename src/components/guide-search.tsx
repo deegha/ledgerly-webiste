@@ -1,33 +1,46 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import MiniSearch, { type SearchResult } from "minisearch";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { GuideSearchItem } from "@/app/api/guide-search/route";
 
-function scoreItem(item: GuideSearchItem, query: string): number {
-  const q = query.toLowerCase();
-  let score = 0;
-  if (item.title.toLowerCase() === q) score += 20;
-  if (item.title.toLowerCase().startsWith(q)) score += 8;
-  else if (item.title.toLowerCase().includes(q)) score += 5;
-  if (item.description.toLowerCase().includes(q)) score += 3;
-  if (item.section.toLowerCase().includes(q)) score += 2;
-  if (item.body.toLowerCase().includes(q)) score += 1;
-  return score;
+// Fuzzy client-side search over the combined Guide + Help index (see
+// USER_GUIDE_PLAN.md §4 and §7.4 — minisearch is the one client-side
+// search dependency this repo takes on). The index is built in the
+// browser from /api/guide-search's JSON the first time the box is
+// focused, then kept in memory for the session.
+function buildIndex(items: GuideSearchItem[]): MiniSearch<GuideSearchItem> {
+  const index = new MiniSearch<GuideSearchItem>({
+    idField: "url",
+    fields: ["title", "description", "section", "body"],
+    storeFields: ["url", "title", "description", "section"],
+    searchOptions: {
+      boost: { title: 4, description: 2, section: 1.5 },
+      prefix: true,
+      fuzzy: 0.2,
+      combineWith: "AND",
+    },
+  });
+  index.addAll(items);
+  return index;
 }
 
 export function GuideSearch() {
-  const [items, setItems] = useState<GuideSearchItem[] | null>(null);
+  const [index, setIndex] = useState<MiniSearch<GuideSearchItem> | null>(null);
+  const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   function ensureLoaded() {
-    if (items) return;
+    if (index || loading) return;
+    setLoading(true);
     fetch("/api/guide-search")
       .then((res) => res.json())
-      .then((data: GuideSearchItem[]) => setItems(data));
+      .then((data: GuideSearchItem[]) => setIndex(buildIndex(data)))
+      .finally(() => setLoading(false));
   }
 
   useEffect(() => {
@@ -42,8 +55,8 @@ export function GuideSearch() {
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- ensureLoaded closes over `items` only to skip a refetch
-  }, [items]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- ensureLoaded only reads `index`/`loading` to skip a refetch
+  }, [index, loading]);
 
   useEffect(() => {
     function onClickOutside(e: MouseEvent) {
@@ -56,15 +69,10 @@ export function GuideSearch() {
   }, []);
 
   const trimmed = query.trim();
-  const results =
-    trimmed.length > 0 && items
-      ? items
-          .map((item) => ({ item, score: scoreItem(item, trimmed) }))
-          .filter((r) => r.score > 0)
-          .sort((a, b) => b.score - a.score)
-          .slice(0, 8)
-          .map((r) => r.item)
-      : [];
+  const results = useMemo(() => {
+    if (trimmed.length === 0 || !index) return [] as SearchResult[];
+    return index.search(trimmed).slice(0, 8);
+  }, [trimmed, index]);
 
   return (
     <div ref={containerRef} className="relative">
@@ -124,7 +132,7 @@ export function GuideSearch() {
             </ul>
           ) : (
             <p className="text-ink-faint px-4 py-6 text-center text-sm">
-              {items ? "No results." : "Loading…"}
+              {index ? "No results." : "Loading…"}
             </p>
           )}
         </div>

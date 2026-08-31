@@ -10,13 +10,12 @@ export type GuideSearchItem = {
   body: string;
 };
 
-// A hand-rolled ranked-substring index rather than a fuzzy-search library —
-// USER_GUIDE_PLAN.md §7 flags minisearch/fuse.js as an open decision, so
-// this ships dependency-free until that's confirmed; swapping the scoring
-// in guide-search.tsx for a real library later doesn't require touching
-// this route's shape. Recomputed per request rather than cached: content
-// is a handful of markdown files read from disk, cheap enough that a cache
-// layer would be premature.
+// This route just serves the raw combined Guide + Help corpus as JSON;
+// the fuzzy index is built client-side with minisearch in guide-search.tsx
+// (USER_GUIDE_PLAN.md §7.4 — decision made: minisearch, the one
+// client-side search dependency this repo takes on). Recomputed per
+// request rather than cached: content is a handful of markdown files read
+// from disk, cheap enough that a cache layer would be premature.
 function stripHtml(html: string): string {
   return html
     .replace(/<[^>]+>/g, " ")
