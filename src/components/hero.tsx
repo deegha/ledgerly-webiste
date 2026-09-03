@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import { CtaLink } from "@/components/cta-link";
+import { trackEvent } from "@/lib/analytics";
 import { LedgerTexture } from "@/components/ledger-texture";
 import { StatRow } from "@/components/stat-row";
 import { heroStats } from "@/lib/site-content";
@@ -69,14 +70,16 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">
-          <Link
+          <CtaLink
+            location="hero"
             href="/get-started"
             className="bg-brand rounded-md px-6 py-3 text-sm font-medium text-white shadow-sm transition-opacity hover:opacity-90"
           >
             Get started
-          </Link>
+          </CtaLink>
           <a
             href="#product"
+            onClick={() => trackEvent("cta_click", { cta: "see_how_it_works", location: "hero" })}
             className="border-rule-strong text-ink hover:bg-mist rounded-md border px-6 py-3 text-sm font-medium transition-colors"
           >
             See how it works

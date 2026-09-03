@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@/components/analytics";
 import { siteUrl } from "@/lib/env";
 import "./globals.css";
 
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );

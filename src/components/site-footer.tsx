@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { OutboundLink } from "@/components/cta-link";
 import { Logo } from "@/components/logo";
 import { getBlogPosts, getHelpArticles } from "@/lib/content";
 
@@ -18,12 +19,14 @@ export async function SiteFooter() {
             <p className="text-ink-soft mt-3 max-w-[26ch] text-sm">
               Double-entry bookkeeping, built for Sri Lanka.
             </p>
-            <a
+            <OutboundLink
+              event="contact_email_click"
+              location="footer"
               href={`mailto:${CONTACT_EMAIL}`}
               className="text-brand-ink mt-4 inline-block text-sm font-medium"
             >
               {CONTACT_EMAIL}
-            </a>
+            </OutboundLink>
           </div>
 
           <div>

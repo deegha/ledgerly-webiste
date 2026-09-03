@@ -3,6 +3,7 @@
 import Link from "next/link";
 import MiniSearch, { type SearchResult } from "minisearch";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import type { GuideSearchItem } from "@/app/api/guide-search/route";
 
 // Fuzzy client-side search over the combined Guide + Help index (see
@@ -74,6 +75,19 @@ export function GuideSearch() {
     return index.search(trimmed).slice(0, 8);
   }, [trimmed, index]);
 
+  // Debounced GA4 `search` event — fire once the visitor stops typing (>=3
+  // chars), not on every keystroke. The timeout resets on every change and
+  // lastTracked de-dupes, so a settled term is reported exactly once.
+  const lastTracked = useRef("");
+  useEffect(() => {
+    if (!index || trimmed.length < 3 || trimmed === lastTracked.current) return;
+    const t = setTimeout(() => {
+      lastTracked.current = trimmed;
+      trackEvent("search", { search_term: trimmed, results_count: results.length });
+    }, 600);
+    return () => clearTimeout(t);
+  }, [trimmed, index, results]);
+
   return (
     <div ref={containerRef} className="relative">
       <div className="border-rule bg-paper-raised focus-within:border-brand flex items-center gap-2 rounded-md border px-3.5 py-2.5 shadow-sm transition-colors">
@@ -118,7 +132,14 @@ export function GuideSearch() {
                 <li key={item.url}>
                   <Link
                     href={item.url}
-                    onClick={() => setOpen(false)}
+                    onClick={() => {
+                      trackEvent("search_result_click", {
+                        search_term: trimmed,
+                        link_url: item.url,
+                        link_text: String(item.title),
+                      });
+                      setOpen(false);
+                    }}
                     className="hover:bg-mist block px-4 py-3"
                   >
                     <span className="text-brand-ink block font-mono text-[0.65rem] font-semibold tracking-[0.08em] uppercase">

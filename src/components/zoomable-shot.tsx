@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import { useState } from "react";
 import { BrowserFrame } from "@/components/browser-frame";
+import { trackEvent } from "@/lib/analytics";
 import type { ShotImage } from "@/lib/site-content";
 
 export function ZoomableShot({ image, priority }: { image: ShotImage; priority?: boolean }) {
@@ -22,7 +23,13 @@ export function ZoomableShot({ image, priority }: { image: ShotImage; priority?:
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setOpen(true);
+          trackEvent("screenshot_zoom", {
+            screenshot_alt: image.alt,
+            page_path: typeof window !== "undefined" ? window.location.pathname : undefined,
+          });
+        }}
         className="block w-full cursor-zoom-in text-left"
         aria-label={`Enlarge screenshot: ${image.alt}`}
       >

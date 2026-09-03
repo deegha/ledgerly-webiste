@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { CtaLink, OutboundLink } from "@/components/cta-link";
 import { isNavActive, navLinks } from "@/lib/nav-links";
 import { signInUrl } from "@/lib/env";
 
@@ -74,18 +75,21 @@ export function MobileNav() {
                 </Link>
               );
             })}
-            <a
+            <OutboundLink
+              event="sign_in_click"
+              location="mobile_nav"
               href={signInUrl}
               className="border-rule text-ink mt-6 rounded-md border px-4 py-3 text-center text-sm font-medium"
             >
               Sign in
-            </a>
-            <Link
+            </OutboundLink>
+            <CtaLink
+              location="mobile_nav"
               href="/get-started"
               className="bg-brand mt-2 rounded-md px-4 py-3 text-center text-sm font-medium text-white shadow-sm"
             >
               Get started
-            </Link>
+            </CtaLink>
           </nav>
         </div>
       )}

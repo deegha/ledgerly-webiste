@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 // Guide screenshots render as plain HTML (`.guide-screenshot` figures, see
 // lib/content.ts's guide Marked renderer) rather than a per-image React
@@ -17,6 +18,10 @@ export function GuideScreenshotLightbox() {
       const img = target.closest(".guide-screenshot img") as HTMLImageElement | null;
       if (!img) return;
       setActive({ src: img.currentSrc || img.src, alt: img.alt });
+      trackEvent("screenshot_zoom", {
+        screenshot_alt: img.alt,
+        page_path: window.location.pathname,
+      });
     }
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);

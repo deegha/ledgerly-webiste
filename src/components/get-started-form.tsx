@@ -1,6 +1,7 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { submitLeadAction, type SubmitLeadActionState } from "@/server/actions/submit-lead";
 
 const initialState: SubmitLeadActionState = { status: "idle" };
@@ -19,6 +20,27 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 
 export function GetStartedForm() {
   const [state, formAction, pending] = useActionState(submitLeadAction, initialState);
+  const started = useRef(false);
+
+  // Fire once, on the visitor's first interaction with any field — pairs with
+  // generate_lead below to give a form start → completion rate.
+  function handleFirstInteraction() {
+    if (started.current) return;
+    started.current = true;
+    trackEvent("lead_form_start", { form_location: "get_started" });
+  }
+
+  useEffect(() => {
+    if (state.status === "success") {
+      // GA4 recommended event for a submitted lead — mark this as a Key event.
+      trackEvent("generate_lead", { form_location: "get_started" });
+    } else if (state.status === "error") {
+      trackEvent("lead_form_error", {
+        form_location: "get_started",
+        error_message: state.message,
+      });
+    }
+  }, [state]);
 
   if (state.status === "success") {
     return (
@@ -32,7 +54,11 @@ export function GetStartedForm() {
   }
 
   return (
-    <form action={formAction} className="flex flex-col gap-4">
+    <form
+      action={formAction}
+      onFocusCapture={handleFirstInteraction}
+      className="flex flex-col gap-4"
+    >
       {/* Honeypot — hidden from real visitors via CSS, not display:none (some
           bots skip fields hidden that way); left blank by anyone who isn't a
           bot filling in every field it can see. 1x1px + clipped rather than

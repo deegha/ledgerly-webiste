@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CtaLink, OutboundLink } from "@/components/cta-link";
 import { Logo } from "@/components/logo";
 import { MobileNav } from "@/components/mobile-nav";
 import { SiteNavLinks } from "@/components/site-nav-links";
@@ -13,18 +14,21 @@ export function SiteHeader() {
         </Link>
         <SiteNavLinks />
         <div className="flex items-center gap-2">
-          <a
+          <OutboundLink
+            event="sign_in_click"
+            location="header"
             href={signInUrl}
             className="text-ink hover:bg-mist hidden rounded-md px-3.5 py-2 text-sm font-medium transition-colors sm:inline-block"
           >
             Sign in
-          </a>
-          <Link
+          </OutboundLink>
+          <CtaLink
+            location="header"
             href="/get-started"
             className="bg-brand rounded-md px-3.5 py-2 text-sm font-medium text-white shadow-sm transition-opacity hover:opacity-90 sm:px-4"
           >
             Get started
-          </Link>
+          </CtaLink>
           <MobileNav />
         </div>
       </div>
