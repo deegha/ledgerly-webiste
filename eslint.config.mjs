@@ -7,10 +7,10 @@ import nextTs from "eslint-config-next/typescript";
 // it's cheap and keeps a hand-built design system from drifting into inline hex values.
 const hexColorLintConfig = {
   files: ["src/components/**/*.{ts,tsx}", "src/app/**/*.{ts,tsx}"],
-  // opengraph-image.tsx renders via next/og's ImageResponse (a satori-based renderer,
-  // not the DOM/CSS engine) — it has no access to Tailwind classes or CSS variables at
-  // all, same category of exception as invoicegen's invoice-pdf.tsx.
-  ignores: ["src/app/opengraph-image.tsx"],
+  // opengraph-image.tsx files render via next/og's ImageResponse (a satori-based
+  // renderer, not the DOM/CSS engine) — they have no access to Tailwind classes or
+  // CSS variables at all, same category of exception as invoicegen's invoice-pdf.tsx.
+  ignores: ["src/app/opengraph-image.tsx", "src/app/**/opengraph-image.tsx"],
   rules: {
     "no-restricted-syntax": [
       "error",

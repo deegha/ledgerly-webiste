@@ -38,13 +38,14 @@ export async function generateMetadata({
       url,
       type: "article",
       publishedTime: post.frontmatter.date,
-      images: post.frontmatter.image ? [{ url: post.frontmatter.image }] : undefined,
+      // og:image / twitter:image come from ./opengraph-image.tsx (a generated
+      // PNG). The frontmatter `image` is an SVG — kept for the on-page cover
+      // <img> below, but crawlers won't render SVG cards.
     },
     twitter: {
       card: "summary_large_image",
       title: post.frontmatter.title,
       description: post.frontmatter.description,
-      images: post.frontmatter.image ? [post.frontmatter.image] : undefined,
     },
   };
 }
