@@ -150,6 +150,19 @@ accountants _and_ business owners as users.
 | Recording a direct expense (no bill)                                      | Build                             |
 | Supplier statements                                                       | Gap — same as customer statements |
 
+#### Chapter 5A — Manufacturing (optional module)
+
+Sits between Purchases and Inventory in reading order — you buy materials, you manufacture, you
+see the finished stock. Only orgs with the manufacturing entitlement see this module, so the
+chapter opens by saying so. Directory: `content/guide/manufacturing/`.
+
+| Topic                                                                            | Status             |
+| -------------------------------------------------------------------------------- | ------------------ |
+| How manufacturing works: the module, enabling it, the two documents, how it fits | Built (2026-09-03) |
+| Bills of materials: components, quantities, wastage, estimated cost, cycle guard | Built (2026-09-03) |
+| Production orders: creating, the posting preview, issuing, what posts, void      | Built (2026-09-03) |
+| Voiding a production order: draft discard vs. issued reversal, the block         | Built (2026-09-03) |
+
 #### Chapter 6 — Inventory
 
 | Topic                                                    | Status |

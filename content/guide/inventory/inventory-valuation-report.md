@@ -7,6 +7,7 @@ related:
   - /guide/items/valuation-methods
   - /guide/inventory/stock-adjustments
   - /guide/bookkeeping-basics/reading-the-core-reports
+  - /guide/manufacturing/production-orders
 ---
 
 ## What it answers
@@ -40,6 +41,12 @@ and in the example both come to **LKR 5,247.35**. The banner says they match.
 **If they ever didn't**, the banner turns into a warning with the difference — a signal that a
 stock movement posted without its matching ledger entry, or vice versa, which should never
 happen but is exactly the kind of thing you want caught immediately rather than at year-end.
+
+If you use the [manufacturing module](/guide/manufacturing/overview) and split stock across
+separate **Raw Materials** and **Finished Goods** inventory accounts, the banner reconciles the
+report against **all** of your inventory accounts together — its wording is
+_"Reconciles to the inventory accounts in the trial balance"_. Nothing else about the check
+changes.
 
 ## Common questions
 

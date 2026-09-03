@@ -42,6 +42,12 @@ export const GUIDE_CHAPTERS: GuideChapterMeta[] = [
     description: "Suppliers, bills, debit notes, supplier payments, and expenses.",
   },
   {
+    slug: "manufacturing",
+    title: "Manufacturing",
+    description:
+      "Bills of materials and production orders — turning raw materials into finished goods. An optional module your admin enables.",
+  },
+  {
     slug: "inventory",
     title: "Inventory",
     description: "Stock adjustments and the inventory valuation report.",

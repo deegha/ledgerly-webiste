@@ -6,6 +6,7 @@ verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
 related:
   - /guide/items/item-defaults-and-accounts
   - /guide/items/stock-movements
+  - /guide/manufacturing/bills-of-materials
 ---
 
 ## What an item is

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <mask id="fadeM3">
+      <linearGradient id="fadeGradM3" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#000"/>
+        <stop offset="0.18" stop-color="#fff"/>
+        <stop offset="0.82" stop-color="#fff"/>
+        <stop offset="1" stop-color="#000"/>
+      </linearGradient>
+      <rect x="0" y="0" width="1200" height="630" fill="url(#fadeGradM3)"/>
+    </mask>
+  </defs>
+  <rect width="1200" height="630" fill="#100f0c"/>
+  <g mask="url(#fadeM3)" stroke="#2b2620" stroke-width="1">
+    <line x1="0" y1="44" x2="1200" y2="44"/><line x1="0" y1="88" x2="1200" y2="88"/>
+    <line x1="0" y1="132" x2="1200" y2="132"/><line x1="0" y1="176" x2="1200" y2="176"/>
+    <line x1="0" y1="220" x2="1200" y2="220"/><line x1="0" y1="264" x2="1200" y2="264"/>
+    <line x1="0" y1="308" x2="1200" y2="308"/><line x1="0" y1="352" x2="1200" y2="352"/>
+    <line x1="0" y1="396" x2="1200" y2="396"/><line x1="0" y1="440" x2="1200" y2="440"/>
+    <line x1="0" y1="484" x2="1200" y2="484"/><line x1="0" y1="528" x2="1200" y2="528"/>
+    <line x1="0" y1="572" x2="1200" y2="572"/>
+  </g>
+  <!-- factory roofline -->
+  <g transform="translate(410,250)" stroke="#6c6f8c" stroke-width="9" fill="none" stroke-linejoin="round">
+    <path d="M0 140 L0 40 L70 90 L70 40 L140 90 L140 40 L210 90 L210 140 Z"/>
+    <line x1="26" y1="140" x2="26" y2="104"/>
+    <line x1="96" y1="140" x2="96" y2="104"/>
+    <line x1="166" y1="140" x2="166" y2="104"/>
+  </g>
+  <!-- traced value line rising out of it -->
+  <g transform="translate(650,250)" stroke="#2dd4bf" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="0,140 55,90 110,120 165,30"/>
+    <polyline points="132,30 165,30 165,63"/>
+  </g>
+  <!-- amber underline: the audit trail -->
+  <line x1="410" y1="410" x2="815" y2="410" stroke="#f0b429" stroke-width="8" stroke-linecap="round"/>
+</svg>
