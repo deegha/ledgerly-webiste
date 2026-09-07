@@ -1,7 +1,7 @@
 ---
 title: "Foreign-currency invoices and FX gain/loss"
 description: "Invoicing in USD or another currency, the exchange rate it needs, and why the amount you eventually bank rarely matches the invoice."
-order: 7
+order: 8
 verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
 related:
   - /guide/sales/creating-an-invoice

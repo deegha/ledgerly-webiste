@@ -4,6 +4,7 @@ description: "Logging money received, splitting it across several invoices, and 
 order: 6
 verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
 related:
+  - /guide/sales/applying-a-customer-advance
   - /guide/sales/issuing-an-invoice
   - /help/record-a-payment
 ---
@@ -39,15 +40,20 @@ One payment can settle several invoices — allocate part of it to each. It can 
 pay one invoice; that invoice stays open with a reduced balance due, and shows as
 `PARTIALLY PAID`.
 
-## Unallocated receipts
+## Unallocated receipts and advances
 
 If you record a payment and don't allocate all of it — a customer paid in advance, or you're
 not yet sure which invoice it's for — the remainder sits as an **unallocated** amount on the
-receipt. It has still increased your bank balance and reduced the customer's net balance; it
-just isn't tied to a specific invoice yet. Come back and allocate it later. The
-**Unallocated** report lists every such amount across all customers.
+receipt. The form confirms it: _"Held as a customer advance (2400) — you can apply it to an
+invoice later."_ It has still increased your bank balance and reduced the customer's net
+balance; it just isn't tied to a specific invoice yet.
+
+When the invoice exists, you don't come back here — you [apply the advance from the invoice
+itself](/guide/sales/applying-a-customer-advance). The **Unallocated** report lists every such
+amount across all customers.
 
 ## See also
 
+- [Applying a customer advance to an invoice](/guide/sales/applying-a-customer-advance)
 - [What happens when you issue an invoice](/guide/sales/issuing-an-invoice)
 - [Record a payment (quick recipe)](/help/record-a-payment)

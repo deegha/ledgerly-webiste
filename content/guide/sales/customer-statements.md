@@ -1,7 +1,7 @@
 ---
 title: "Customer statements"
 description: "A per-customer statement of invoices, credits, and payments is not currently available. Here's what to use instead."
-order: 9
+order: 10
 verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
 related:
   - /guide/reports/ar-ageing

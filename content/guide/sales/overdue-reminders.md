@@ -1,7 +1,7 @@
 ---
 title: "Automatic overdue-invoice reminders"
 description: "Ledgerly emails customers when their invoices go past due, and logs every reminder on the invoice."
-order: 8
+order: 9
 verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
 related:
   - /guide/sales/customer-payments
