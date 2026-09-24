@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import { CtaLink } from "@/components/cta-link";
 import { trackEvent } from "@/lib/analytics";
 import { LedgerTexture } from "@/components/ledger-texture";
-import { StatRow } from "@/components/stat-row";
-import { heroStats } from "@/lib/site-content";
 
 const TARGET = 4210875.6;
 
@@ -59,14 +57,15 @@ export function Hero() {
       <LedgerTexture />
       <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
         <span className="text-brand-ink font-mono text-xs font-semibold tracking-[0.14em] uppercase">
-          Double-entry bookkeeping, built for Sri Lanka
+          Built for businesses that get audited
         </span>
-        <h1 className="font-display mt-4 text-5xl leading-[1.02] font-semibold sm:text-6xl md:text-7xl">
-          Ledgerly<span className="text-brand">.</span>lk
+        <h1 className="font-display mt-4 max-w-[18ch] text-4xl leading-[1.08] font-semibold sm:text-5xl md:text-6xl">
+          Your books look fine. Can they prove it?
         </h1>
         <p className="text-ink-soft mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl">
-          A general ledger with documents that post into it — not an invoicing app with reports
-          bolted on. Every number on every screen traces back to a journal line.
+          If you sell on credit, file VAT, or answer to an auditor every year, &quot;it balances in
+          Excel&quot; isn&apos;t the same as &quot;it&apos;s correct.&quot; Ledgerly is bookkeeping
+          software that can&apos;t quietly go wrong — because nothing in it can be quietly edited.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -78,7 +77,7 @@ export function Hero() {
             Get started
           </CtaLink>
           <a
-            href="#product"
+            href="#understanding"
             onClick={() => trackEvent("cta_click", { cta: "see_how_it_works", location: "hero" })}
             className="border-rule-strong text-ink hover:bg-mist rounded-md border px-6 py-3 text-sm font-medium transition-colors"
           >
@@ -99,10 +98,6 @@ export function Hero() {
           >
             ✓ balanced
           </span>
-        </div>
-
-        <div className="border-rule mt-14 border-t pt-10">
-          <StatRow stats={heroStats} />
         </div>
       </div>
     </section>
