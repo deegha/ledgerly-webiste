@@ -5,13 +5,17 @@
 // invented names, no invented company names), written so this section can go
 // live looking credible without ever risking a fabricated quote being
 // attributed to a real, identifiable person or business. See
-// HOMEPAGE-REVAMP.md §2 (Section 4) and §5 for the full reasoning.
+// HOMEPAGE-REVAMP-V2.md §3 (Section 4b) and §6 for the full reasoning.
 //
-// The founder has real, written customer reviews coming separately. When
-// they arrive, replace PLACEHOLDER_REVIEWS below outright — swap the quote
-// and attribution line, keep the section/card structure — and rename this
-// file and component (drop "-placeholder" / "Placeholder") once real reviews
-// are in. Do not let this shipped state go unnoticed for long.
+// Ledgerly has REAL reviews coming from its three production customers —
+// Lans, Kavo Kreatives, and Janse Trading. When they arrive, replace
+// PLACEHOLDER_REVIEWS below outright (swap the quote and attribution line,
+// keep the card structure) and rename this file and component to drop
+// "-placeholder" / "Placeholder". This must not ship silently as if real.
+//
+// Note: these three roles were rewritten for V2. The previous set leaned on
+// audit-adjacent framing ("accountant reviewing SME financial records") that
+// does not match the real customer base — see HOMEPAGE-REVAMP-V2.md §0.
 // ============================================================================
 
 type PlaceholderReview = {
@@ -22,25 +26,24 @@ type PlaceholderReview = {
 const PLACEHOLDER_REVIEWS: PlaceholderReview[] = [
   {
     quote:
-      "I used to dread the week before our audit. Now I just export what the auditor asks for and move on with my day.",
-    attribution: "Business owner, VAT-registered retail trading company",
+      "I used to keep the real numbers in my head. Now I don't have to — and neither does my son.",
+    attribution: "Second-generation business owner, family trading business",
+  },
+  {
+    quote: "We didn't have a system before this. Now our new accountant isn't starting from zero.",
+    attribution: "Founder, two-partner services business",
   },
   {
     quote:
-      "I manage the books for six different clients. This is the first tool where I'm not the one who has to remember what was changed and why — it just remembers for me.",
-    attribution: "Bookkeeper, managing multiple SME clients",
-  },
-  {
-    quote:
-      "Most small business books I review, I have to take on faith. With this, I can actually trace a number back to where it came from. That's rare.",
-    attribution: "Accountant, reviewing SME financial records",
+      "I used to spend hours reconciling a spreadsheet I didn't fully trust. Now I don't have to wonder if it's right.",
+    attribution: "Accountant, managing books for a manufacturing business",
   },
 ];
 
 export function ReviewsSectionPlaceholder() {
   return (
     <section className="border-rule border-b">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <span className="text-brand-ink font-mono text-xs font-semibold tracking-[0.14em] uppercase">
           From people already using it
         </span>

@@ -57,15 +57,16 @@ export function Hero() {
       <LedgerTexture />
       <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
         <span className="text-brand-ink font-mono text-xs font-semibold tracking-[0.14em] uppercase">
-          Built for businesses that get audited
+          For businesses that outgrew the exercise book — or the spreadsheet
         </span>
         <h1 className="font-display mt-4 max-w-[18ch] text-4xl leading-[1.08] font-semibold sm:text-5xl md:text-6xl">
-          Your books look fine. Can they prove it?
+          Know your numbers. Not just remember them.
         </h1>
         <p className="text-ink-soft mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl">
-          If you sell on credit, file VAT, or answer to an auditor every year, &quot;it balances in
-          Excel&quot; isn&apos;t the same as &quot;it&apos;s correct.&quot; Ledgerly is bookkeeping
-          software that can&apos;t quietly go wrong — because nothing in it can be quietly edited.
+          Whether it&apos;s still in your head, in an inherited notebook, or spread across a dozen
+          tabs your accountant fights every month — at some point, &quot;roughly, I think&quot;
+          stops being good enough. Ledgerly is bookkeeping that keeps up with a business that&apos;s
+          actually growing.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -77,7 +78,7 @@ export function Hero() {
             Get started
           </CtaLink>
           <a
-            href="#understanding"
+            href="#insight"
             onClick={() => trackEvent("cta_click", { cta: "see_how_it_works", location: "hero" })}
             className="border-rule-strong text-ink hover:bg-mist rounded-md border px-6 py-3 text-sm font-medium transition-colors"
           >

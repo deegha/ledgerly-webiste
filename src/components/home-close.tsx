@@ -6,7 +6,7 @@ export function HomeClose() {
   return (
     <section className="border-rule bg-mist border-t">
       <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-        <h2 className="text-3xl sm:text-4xl">See if your books hold up.</h2>
+        <h2 className="text-3xl sm:text-4xl">Stop guessing. Start knowing.</h2>
         <p className="text-ink-soft mx-auto mt-4 max-w-xl text-lg leading-relaxed">
           Start free, or talk to us first if you&apos;d rather ask a question before you do.
         </p>

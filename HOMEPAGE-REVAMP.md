@@ -1,6 +1,8 @@
 # HOMEPAGE-REVAMP.md — Ledgerly.lk Home Page Redesign
 
-**Status:** Not started
+**Status:** Built. All eight sections live on `/`; Section 2's illustration was revised once after
+initial review (see §3). Section 4's reviews remain placeholders pending real customer quotes —
+see §2 and the build checklist below.
 **Scope:** The home route (`/`) only. Every other route — `/features`, `/blog`, `/guide`,
 `/help`, `/get-started`, the footer, the nav — stays exactly as it is. Do not touch shared
 layout, shared components' visual style, or any other page's content.
@@ -45,8 +47,9 @@ the two new illustration images (below). Nothing else on the site.
 
 ## 2. Section-by-section specification
 
-Eight sections, in this order. Each entry gives: the section's one job, the actual copy to use,
-and what image (if any) goes with it.
+Nine sections, in this order (originally eight — Pricing was added after the initial build; see
+Section 8 below for why). Each entry gives: the section's one job, the actual copy to use, and
+what image (if any) goes with it.
 
 ### Section 1 — Hero
 
@@ -83,8 +86,15 @@ harmless — the total's still right. Three months later, your accountant can't 
 numbers in two reports don't agree, and now every figure you've filed is in question. This isn't
 a hypothetical. It's the single most common reason small business books don't hold up.
 
-**Image:** **`section-2-edited-vs-locked.png`** — the two-panel illustration (pasted in by the
-person running this task; see §3 for exact placement and handling if it's not yet supplied).
+**Image:** ~~`section-2-edited-vs-locked.png`~~ **Superseded — see note below.** The two generic
+stock-style icons (a pencil-on-document, a padlock-on-document) originally planned here were
+built and shipped, then rejected in review: they're decorative, not explanatory — a visitor still
+has to read the caption to know what's being compared. Replaced with a built (not
+photographed/illustrated) before/after diagram of the actual invoice from the copy above: the
+same line item, edited in place with a mismatched total on one side, versus locked-and-unchanged
+with a linked credit note on the other. This shows the actual mechanism instead of a metaphor for
+it, and reads correctly without needing the caption. See §3 for the implementation note — this is
+plain HTML/CSS built from existing tokens, not an image file.
 
 ---
 
@@ -210,7 +220,49 @@ breadth at a glance, not depth — depth is what Features is for.
 
 ---
 
-### Section 8 — Close
+### Section 8 — Pricing
+
+**Job:** answer "how much" before the visitor has to ask — plainly enough that nobody needs to
+email in to find out. Added after the initial eight-section build shipped, at the founder's
+request; placed after the trust section and before Close because pricing is a decision input,
+not a trust input — it belongs right before the ask, not competing with the "why this is
+structurally different" argument.
+
+**Eyebrow:** Pricing
+
+**Headline:** One plan. Every feature, now and later.
+
+**Body:** One month free, then LKR 2,500 a month — a limited-time rate for anyone who starts
+before December 2026 (regularly LKR 3,000). One subscription covers everything Ledgerly does
+today and everything it does next, with no add-ons, no tiers, and no per-feature upsells.
+
+**Pricing card**, centred, same card visual treatment as the reviews cards in Section 4:
+
+- Badge: "Limited-time — locked in if you start before Dec 2026"
+- Price: LKR 2,500 <span style="text-decoration:line-through">LKR 3,000</span> /month
+- Sub-line: First month free — no charge until month 2
+- Inclusions (checkmark list, same icon/visual language as the Section 7 invariants grid):
+  - Every feature Ledgerly has, and every one it ships next
+  - 1 month free before billing starts
+  - LKR 2,500/month, locked in for as long as you stay subscribed
+  - No add-ons, no tiers, no per-feature upsells
+- Button: Get started → `/get-started`
+
+**Pricing terms, confirmed with the founder (2026-09-25, trial length revised 2026-09-26) —
+load-bearing, don't rephrase loosely:** "Valid until December 2026" gates _signup_, not _billing_:
+start the subscription (trial) before December 2026 and LKR 2,500/month is locked in for as long
+as the account stays subscribed, even after that date passes. Signups starting on or after
+January 2027 pay the regular LKR 3,000/month — this page doesn't currently say what happens then,
+since it isn't live yet. The 1-month trial is a straightforward free period: no charge at all for
+the first month, then LKR 2,500/month billing begins automatically. If either of these terms ever
+changes, this section's copy needs to change with it — it's asserting exact billing behaviour, not
+marketing flavour text.
+
+**Image:** none.
+
+---
+
+### Section 9 — Close
 
 **Job:** convert. Two paths, for two different visitor states — ready now, versus not ready yet
 but not a no either.
@@ -230,25 +282,26 @@ build a full contact-form backend as part of this task unless explicitly asked.
 
 ## 3. Images
 
-Two new illustrations were generated (Leonardo AI, prompts on file with the founder) and will be
-pasted into this conversation as files: `section-2-edited-vs-locked-left.png` (the "most
-software" panel — coral background, document with a pencil mid-edit and faint disturbance lines)
-and `section-2-edited-vs-locked-right.png` (the "Ledgerly" panel — teal background, undisturbed
-document with a padlock and a small attached correction note).
+**Superseded — Section 2's illustration is no longer an image file.** Two illustrations were
+originally generated (Leonardo AI) and shipped as `section-2-edited-vs-locked-left.jpg` /
+`-right.jpg` in `public/images/` — generic coral/pencil and teal/padlock icons, side by side. In
+review this was rejected: the icons are a metaphor for the problem, not a picture of it, so a
+visitor still had to read the caption to know what was being compared. A metaphor is exactly what
+a homepage aimed at a first-time visitor (§0) can't afford — the whole point of this section is
+that a normal person gets it without extra reading.
 
-**If both images are supplied in this conversation:** place them side by side as a single
-composed section-2 visual — left panel labelled "Most software", right panel labelled
-"Ledgerly", with a light divider between them, matching the two-panel comparison structure
-described in Section 2's job above. Add the two caption lines beneath each panel:
+**What's built instead:** a before/after diagram of the actual invoice named in Section 2's copy
+(`INV-2026-000010`), built from plain HTML/CSS using the site's existing tokens — not an image
+file, not a new illustration asset. Left panel: the line item edited in place (`qty 30` →
+`qty 45`, struck through), with the invoice total still reading the old, now-wrong figure. Right
+panel: the same invoice unchanged and marked `🔒 Posted`, with a separate, visually distinct
+"credit note" card underneath it showing the correction. This is the literal mechanism Section 3
+goes on to explain, shown before it's explained — the two sections now reinforce each other.
+Implementation lives entirely in `src/components/problem-section.tsx`.
 
-- Left: "Line quietly edited after it was posted" / "Other totals no longer explain themselves"
-- Right: "Invoice stays exactly as it was posted" / "Credit note explains what changed, and why"
-
-**If the images are not supplied, or only one is supplied:** do not block on this. Build
-Section 2 with a simple text-only placeholder area sized for where the image will go (labelled
-clearly in code as a placeholder, e.g. an HTML comment or a visibly labelled placeholder block —
-not a broken image tag), and flag in your summary that the image needs to be dropped in before
-this section is complete. Every other section can and should proceed regardless.
+The two original `.jpg` files are still sitting in `public/images/` — unused now, not deleted
+(deleting assets the founder supplied wasn't this task's call to make; harmless to leave in place
+if a future need for them ever comes up).
 
 All other images used on this page (`invoice-detail.jpg`, `dashboard.jpg`, `vat-return.jpg`) are
 **existing site assets already in use on Features — reuse the same files, do not regenerate or
@@ -273,18 +326,24 @@ re-source them.**
 
 ## 5. Build checklist
 
-- [ ] Section 1 — Hero: new headline/subhead copy, existing live balance widget retained
-- [ ] Section 2 — Problem: new copy, two-panel image placed (or placeholder + flag, per §3)
-- [ ] Section 3 — Resolution: new copy, existing `invoice-detail.jpg` reused
-- [ ] Section 4 — Reviews: three placeholder cards built, **prominently flagged as placeholders**
-      needing real-review replacement
-- [ ] Section 5 — Product proof: new copy, existing `dashboard.jpg` reused
-- [ ] Section 6 — Sri Lanka stakes: new copy, existing `vat-return.jpg` reused
-- [ ] Section 7 — Trust signal: existing ten-rule content, compressed layout
-- [ ] Section 8 — Close: new copy, existing `/get-started` link, new contact/mailto link
-- [ ] Confirm no other route, component style, or shared layout element changed
-- [ ] Confirm total homepage length is visibly shorter than `/features`, not comparable to it
+- [x] Section 1 — Hero: new headline/subhead copy, existing live balance widget retained
+- [x] Section 2 — Problem: new copy, built (not image-based) before/after invoice diagram — see §3
+- [x] Section 3 — Resolution: new copy, existing `invoice-detail.jpg` reused
+- [x] Section 4 — Reviews: three placeholder cards built, **prominently flagged as placeholders**
+      needing real-review replacement (component/const literally named `*Placeholder*` so it
+      can't be missed in a future diff or grep — see `src/components/reviews-section-placeholder.tsx`)
+- [x] Section 5 — Product proof: new copy, existing `dashboard.jpg` reused
+- [x] Section 6 — Sri Lanka stakes: new copy, existing `vat-return.jpg` reused
+- [x] Section 7 — Trust signal: existing ten-rule content, compressed layout (`InvariantsGrid`
+      `compact` prop)
+- [x] Section 8 — Pricing: new pricing card, terms confirmed with founder — see §2 note
+      (`src/components/pricing-section.tsx`)
+- [x] Section 9 — Close: new copy, existing `/get-started` link, new contact/mailto link
+      (`src/components/home-close.tsx` — kept separate from `CtaBand`, which `/features` still uses)
+- [x] Confirm no other route, component style, or shared layout element changed
+- [x] Confirm total homepage length is visibly shorter than `/features`, not comparable to it
 
 **Done when:** the homepage reads as a distinct, shorter page with its own arc — problem, meaning,
-proof, trust, action — rather than a shorter version of the Features page; every other route is
-byte-for-byte unchanged; the Section 4 placeholder status is impossible to miss in review.
+proof, trust, price, action — rather than a shorter version of the Features page; every other
+route is byte-for-byte unchanged; the Section 4 placeholder status is impossible to miss in
+review; the Section 8 pricing terms match what's confirmed above, exactly.

@@ -1,12 +1,19 @@
 import { ZoomableShot } from "@/components/zoomable-shot";
 import type { FeatureChapter } from "@/lib/site-content";
 
-export function FeatureSection({ chapter }: { chapter: FeatureChapter }) {
+export function FeatureSection({
+  chapter,
+  compact,
+}: {
+  chapter: FeatureChapter;
+  /** Tighter vertical rhythm, for sections meant to read as one grouped cluster. */
+  compact?: boolean;
+}) {
   const { id, eyebrow, title, body, images, tinted } = chapter;
 
   return (
     <section id={id} className={`border-rule border-b ${tinted ? "bg-mist" : ""}`}>
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className={`mx-auto max-w-6xl px-6 ${compact ? "py-16 md:py-20" : "py-20 md:py-28"}`}>
         <div className="max-w-[62ch]">
           <span className="text-brand-ink font-mono text-xs font-semibold tracking-[0.14em] uppercase">
             {eyebrow}
