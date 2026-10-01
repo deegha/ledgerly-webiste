@@ -1,17 +1,46 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { CtaBand } from "@/components/cta-band";
 import { FeatureSection } from "@/components/feature-section";
 import { Hero } from "@/components/hero";
-import { InvariantsGrid } from "@/components/invariants-grid";
+import { HomeClose } from "@/components/home-close";
+import { InsightSection } from "@/components/insight-section";
 import { JsonLd } from "@/components/json-ld";
+import { PricingSection } from "@/components/pricing-section";
 import { ProblemSection } from "@/components/problem-section";
+import { ReviewsSectionPlaceholder } from "@/components/reviews-section-placeholder";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteUrl } from "@/lib/env";
-import { featureChapters, invariants } from "@/lib/site-content";
+import { featureChapters, type FeatureChapter } from "@/lib/site-content";
 
-const highlightedChapters = featureChapters.filter((chapter) => chapter.highlight);
+// Reuse existing screenshots + their metadata from the /features content —
+// see HOMEPAGE-REVAMP-V2.md §3: these two images are existing site assets,
+// not regenerated or re-sourced for the homepage. (Section 3/Insight used to
+// reuse invoice-detail.jpg here too; it's now a native diagram instead — see
+// InsightSection and HOMEPAGE-REVAMP-V2.md §6.)
+const productChapter = featureChapters.find((chapter) => chapter.id === "product")!;
+const complianceChapter = featureChapters.find((chapter) => chapter.id === "compliance")!;
+
+const dashboardImage = productChapter.images[0];
+const vatReturnImage = complianceChapter.images[0];
+
+// Section 4a — One real screen. First of the three trust-cluster parts.
+const proofSection: FeatureChapter = {
+  id: "proof",
+  eyebrow: "See it for yourself",
+  title: "One screen. What you actually own, what you're owed, what it cost you to get here.",
+  body: "Revenue, expenses, net profit, cash position, and what's outstanding — computed fresh from posted entries every time the page loads, not summed from a spreadsheet of invoices.",
+  images: [dashboardImage],
+};
+
+// Section 4c — Built for Sri Lanka. Deliberately calmer than the previous
+// version's "this is coming for you" urgency framing — see V2 §3.
+const localSection: FeatureChapter = {
+  id: "sri-lanka",
+  eyebrow: "Built for Sri Lanka, not adapted to it",
+  title: "Gazette-format invoices. VAT returns. RAMIS-ready.",
+  body: "Tax invoices carry the supply date as its own field, separate from the invoice date, per Gazette 2481/22. VAT returns total output tax, input tax, and credit/debit note adjustments by schedule number, straight from posted entries. And when real-time e-invoicing rolls out to your sector, your submission history is already there — not something you'll have to reconstruct later.",
+  images: [vatReturnImage],
+};
 
 const title = "Ledgerly.lk — Double-entry bookkeeping, built for Sri Lanka";
 const description =
@@ -47,45 +76,14 @@ export default function Home() {
       <main>
         <Hero />
         <ProblemSection />
-        {highlightedChapters.map((chapter) => (
-          <FeatureSection key={chapter.id} chapter={chapter} />
-        ))}
-        <section className="bg-mist">
-          <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 px-6 py-16 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <h3 className="text-xl">That&apos;s four. There are ten.</h3>
-              <p className="text-ink-soft mt-1">
-                Inventory, fixed assets, budgets, banking, receivables, and team governance — see
-                the whole ledger.
-              </p>
-            </div>
-            <Link
-              href="/features"
-              className="border-rule-strong text-ink hover:bg-paper-raised shrink-0 rounded-md border px-5 py-2.5 text-sm font-medium transition-colors"
-            >
-              See all features
-            </Link>
-          </div>
-        </section>
-        <section id="trust" className="bg-mist">
-          <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-            <span className="text-brand-ink font-mono text-xs font-semibold tracking-[0.14em] uppercase">
-              What &quot;audited&quot; actually rests on
-            </span>
-            <div className="bg-brand mt-4 mb-5 h-[3px] w-11 rounded-full" />
-            <h2 className="max-w-[26ch] text-3xl sm:text-4xl">
-              Ten rules the database enforces — not just the app.
-            </h2>
-            <p className="text-ink-soft mt-4 max-w-2xl text-lg leading-relaxed">
-              Application code is bypassable. A trigger, a constraint, and a revoked database
-              privilege are not.
-            </p>
-            <div className="mt-12">
-              <InvariantsGrid invariants={invariants} />
-            </div>
-          </div>
-        </section>
-        <CtaBand />
+        <InsightSection />
+        {/* Trust cluster (V2 §3, Section 4) — three parts, tightened so they read
+            as one pass through trust rather than three separate stops. */}
+        <FeatureSection chapter={proofSection} compact />
+        <ReviewsSectionPlaceholder />
+        <FeatureSection chapter={localSection} compact />
+        <PricingSection />
+        <HomeClose />
       </main>
       <SiteFooter />
     </>
