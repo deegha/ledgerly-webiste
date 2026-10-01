@@ -6,31 +6,21 @@ import { InsightSection } from "@/components/insight-section";
 import { JsonLd } from "@/components/json-ld";
 import { PricingSection } from "@/components/pricing-section";
 import { ProblemSection } from "@/components/problem-section";
+import { ProofSection } from "@/components/proof-section";
 import { ReviewsSectionPlaceholder } from "@/components/reviews-section-placeholder";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteUrl } from "@/lib/env";
 import { featureChapters, type FeatureChapter } from "@/lib/site-content";
 
-// Reuse existing screenshots + their metadata from the /features content —
-// see HOMEPAGE-REVAMP-V2.md §3: these two images are existing site assets,
-// not regenerated or re-sourced for the homepage. (Section 3/Insight used to
-// reuse invoice-detail.jpg here too; it's now a native diagram instead — see
-// InsightSection and HOMEPAGE-REVAMP-V2.md §6.)
-const productChapter = featureChapters.find((chapter) => chapter.id === "product")!;
+// Reuse existing screenshot + its metadata from the /features content — see
+// HOMEPAGE-REVAMP-V2.md §3: this image is an existing site asset, not
+// regenerated or re-sourced for the homepage. (Sections 3 and 4a used to
+// reuse invoice-detail.jpg and dashboard.jpg here too; both are now native
+// diagrams instead — see InsightSection, ProofSection, and §6.)
 const complianceChapter = featureChapters.find((chapter) => chapter.id === "compliance")!;
 
-const dashboardImage = productChapter.images[0];
 const vatReturnImage = complianceChapter.images[0];
-
-// Section 4a — One real screen. First of the three trust-cluster parts.
-const proofSection: FeatureChapter = {
-  id: "proof",
-  eyebrow: "See it for yourself",
-  title: "One screen. What you actually own, what you're owed, what it cost you to get here.",
-  body: "Revenue, expenses, net profit, cash position, and what's outstanding — computed fresh from posted entries every time the page loads, not summed from a spreadsheet of invoices.",
-  images: [dashboardImage],
-};
 
 // Section 4c — Built for Sri Lanka. Deliberately calmer than the previous
 // version's "this is coming for you" urgency framing — see V2 §3.
@@ -79,7 +69,7 @@ export default function Home() {
         <InsightSection />
         {/* Trust cluster (V2 §3, Section 4) — three parts, tightened so they read
             as one pass through trust rather than three separate stops. */}
-        <FeatureSection chapter={proofSection} compact />
+        <ProofSection />
         <ReviewsSectionPlaceholder />
         <FeatureSection chapter={localSection} compact />
         <PricingSection />
