@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { FeatureSection } from "@/components/feature-section";
 import { Hero } from "@/components/hero";
 import { HomeClose } from "@/components/home-close";
+import { InsightSection } from "@/components/insight-section";
 import { JsonLd } from "@/components/json-ld";
 import { PricingSection } from "@/components/pricing-section";
 import { ProblemSection } from "@/components/problem-section";
@@ -12,29 +13,15 @@ import { siteUrl } from "@/lib/env";
 import { featureChapters, type FeatureChapter } from "@/lib/site-content";
 
 // Reuse existing screenshots + their metadata from the /features content —
-// see HOMEPAGE-REVAMP-V2.md §3: these three images are existing site assets,
-// not regenerated or re-sourced for the homepage.
-const salesChapter = featureChapters.find((chapter) => chapter.id === "sales")!;
+// see HOMEPAGE-REVAMP-V2.md §3: these two images are existing site assets,
+// not regenerated or re-sourced for the homepage. (Section 3/Insight used to
+// reuse invoice-detail.jpg here too; it's now a native diagram instead — see
+// InsightSection and HOMEPAGE-REVAMP-V2.md §6.)
 const productChapter = featureChapters.find((chapter) => chapter.id === "product")!;
 const complianceChapter = featureChapters.find((chapter) => chapter.id === "compliance")!;
 
-const invoiceDetailImage = salesChapter.images.find(
-  (image) => image.src === "/images/invoice-detail.jpg",
-)!;
 const dashboardImage = productChapter.images[0];
 const vatReturnImage = complianceChapter.images[0];
-
-// Section 3 — Insight (HOMEPAGE-REVAMP-V2.md §3). Same invoice screenshot the
-// previous version used, but framed as proof of traceability rather than as a
-// defence against an auditor.
-const insightSection: FeatureChapter = {
-  id: "insight",
-  eyebrow: "Why a spreadsheet can't fix this",
-  title: "A number is only trustworthy if you can see where it came from.",
-  body: "A spreadsheet total is just a total — it doesn't show you which entry it came from, or whether someone changed a formula last month without telling you. Ledgerly keeps every transaction as a real, traceable record: every sale, every cost, every payment — posted once, correct, and impossible to quietly change. So when you ask \"are we making money,\" the answer isn't a feeling. It's a number you can trace, line by line, back to what actually happened.",
-  tinted: true,
-  images: [invoiceDetailImage],
-};
 
 // Section 4a — One real screen. First of the three trust-cluster parts.
 const proofSection: FeatureChapter = {
@@ -89,7 +76,7 @@ export default function Home() {
       <main>
         <Hero />
         <ProblemSection />
-        <FeatureSection chapter={insightSection} />
+        <InsightSection />
         {/* Trust cluster (V2 §3, Section 4) — three parts, tightened so they read
             as one pass through trust rather than three separate stops. */}
         <FeatureSection chapter={proofSection} compact />

@@ -2,10 +2,13 @@
 
 **Status:** Built. All sections live on `/`. Section 2's illustration went through three states —
 placeholder, then a supplied stock illustration that was rejected as off-palette and removed,
-then a native HTML/CSS diagram built from the site's own tokens — see §6. One thing remains
-deliberately outstanding: Section 4b's reviews are placeholders pending the real Lans / Kavo
-Kreatives / Janse Trading quotes. One addition beyond this spec: a Pricing section sits between
-Section 4c and Section 5 — see the note at the end of §6.
+then a native HTML/CSS diagram built from the site's own tokens — see §6. Section 3's
+`invoice-detail.jpg` screenshot was later swapped for a native diagram of the same kind, for the
+same reason (see §6). The hero also carries an experimental native-diagram card beside its copy,
+outside this spec — see the note at the end of §6. One thing remains deliberately outstanding:
+Section 4b's reviews are placeholders pending the real Lans / Kavo Kreatives / Janse Trading
+quotes. One addition beyond this spec: a Pricing section sits between Section 4c and Section 5 —
+see the note at the end of §6.
 **Supersedes:** `HOMEPAGE-REVAMP.md` in full. That version was built around an assumed customer
 profile — "sells on credit, VAT-registered, gets audited" — that turned out not to match any
 real Ledgerly customer. This version is built from the three actual production customers
@@ -254,7 +257,8 @@ backend as part of this task unless explicitly asked.
       meaning) — resolving through an arrow into one "Ledgerly" card with a teal "Reconciled"
       badge, echoing the hero's own "✓ balanced" widget. The old edited/locked concept was
       deleted outright at the start of this task, not adapted.
-- [x] Section 3 — Insight: new copy, existing `invoice-detail.jpg` reused (`id="insight"`)
+- [x] Section 3 — Insight: new copy (`id="insight"`). Illustration later swapped out —
+      see the note below.
 - [x] Section 4a — Proof screen: new copy, existing `dashboard.jpg` reused
 - [x] Section 4b — Reviews: three new placeholder cards built, **prominently flagged** as needing
       replacement with real Lans / Kavo Kreatives / Janse Trading reviews (component and const are
@@ -286,6 +290,33 @@ of `HOMEPAGE-REVAMP.md`, so this spec appears to have been written without Prici
 Confirmed with the founder (2026-09-27) to keep it. Its copy was never audit-framed, so it needed
 no rewrite for V2. Terms live in `src/components/pricing-section.tsx`: LKR 2,500/month (regular
 LKR 3,000), rate locked in for signups before December 2026, 1 month free trial.
+
+**Section 3's screenshot was later swapped for a native diagram (2026-10-01):** this spec (§3,
+Section 3) called for reusing `invoice-detail.jpg`. After Section 2's native diagram landed well,
+the founder asked for the same treatment here, and on reflection the real screenshot was a weaker
+fit anyway: it shows one posted invoice, but the section's actual claim is that one trustworthy
+number is built from _many_ posted records — a single screenshot can't show that, a drill-down
+can. `src/components/insight-section.tsx` replaces the `FeatureSection`+`invoiceDetailImage` usage
+with a dedicated component: a "Net profit" card (LKR 42,047.35 — the same figure used in the
+hero's card, see below) with an arrow down into three traceable entries (Sale/Cost/Payment, each
+with a lock icon and a journal entry reference). The Sale row deliberately reuses the exact
+identifiers from the real `invoice-detail.jpg` screenshot it replaced (`INV-2026-000010`,
+`JE-2026-000031`, `LKR 60,000.00`) so the illustrative "business" stays the same one across the
+page rather than becoming three disconnected mockups. `invoice-detail.jpg` itself is untouched and
+still used for real on `/features` (the "sales" feature chapter) — only the homepage's duplicate
+reference to it was removed.
+
+**Hero illustration (experimental, outside this spec, 2026-10-01):** §3's Hero spec says the
+section should stay "almost entirely typographic." A native-diagram card was prototyped anyway,
+beside the hero copy at `lg:` and wider (stacks below on smaller screens) — same token-built
+approach as Sections 2 and 3, no image asset. It shows "This month: Revenue / Expenses / Net
+profit LKR 42,047.35," reusing the exact figures from the real dashboard screenshot in Section 4a
+and the same net-profit figure as Section 3's new diagram, so the hero, Section 3, and Section 4a
+all agree with each other. This has **not** been confirmed as a final decision — it's flagged
+in-code as experimental in `src/components/hero.tsx`, and the mobile-stacked layout has not been
+visually verified (the browser automation available couldn't resize the viewport in this
+environment). Treat the Hero spec above as still authoritative until this is explicitly decided
+one way or the other.
 
 **Done when:** the homepage reads as a business-owner-to-business-owner conversation about
 outgrowing an informal system, not as a compliance warning; every other route is byte-for-byte
