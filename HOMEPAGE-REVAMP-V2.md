@@ -2,13 +2,15 @@
 
 **Status:** Built. All sections live on `/`. Section 2's illustration went through three states —
 placeholder, then a supplied stock illustration that was rejected as off-palette and removed,
-then a native HTML/CSS diagram built from the site's own tokens — see §6. Section 3's
-`invoice-detail.jpg` screenshot was later swapped for a native diagram of the same kind, for the
-same reason (see §6). The hero also carries an experimental native-diagram card beside its copy,
-outside this spec — see the note at the end of §6. One thing remains deliberately outstanding:
-Section 4b's reviews are placeholders pending the real Lans / Kavo Kreatives / Janse Trading
-quotes. One addition beyond this spec: a Pricing section sits between Section 4c and Section 5 —
-see the note at the end of §6.
+then a native HTML/CSS diagram built from the site's own tokens — see §6. Sections 3 and 4a's
+screenshots (`invoice-detail.jpg`, `dashboard.jpg`) were later swapped for native diagrams of the
+same kind, for the same reason (see §6) — as of this swap, **Section 4c's `vat-return.jpg` is the
+only real product screenshot left on the homepage**, which is a real trade-off against this
+section's own "Build trust" / "Proof screen" job; see the note at the end of §6. The hero also
+carries an experimental native-diagram card beside its copy, outside this spec — see the same
+note. One thing remains deliberately outstanding: Section 4b's reviews are placeholders pending
+the real Lans / Kavo Kreatives / Janse Trading quotes. One addition beyond this spec: a Pricing
+section sits between Section 4c and Section 5 — see the note at the end of §6.
 **Supersedes:** `HOMEPAGE-REVAMP.md` in full. That version was built around an assumed customer
 profile — "sells on credit, VAT-registered, gets audited" — that turned out not to match any
 real Ledgerly customer. This version is built from the three actual production customers
@@ -259,7 +261,7 @@ backend as part of this task unless explicitly asked.
       deleted outright at the start of this task, not adapted.
 - [x] Section 3 — Insight: new copy (`id="insight"`). Illustration later swapped out —
       see the note below.
-- [x] Section 4a — Proof screen: new copy, existing `dashboard.jpg` reused
+- [x] Section 4a — Proof screen: new copy. Illustration later swapped out — see the note below.
 - [x] Section 4b — Reviews: three new placeholder cards built, **prominently flagged** as needing
       replacement with real Lans / Kavo Kreatives / Janse Trading reviews (component and const are
       literally named `*Placeholder*` so they can't be missed in a diff or grep — see
@@ -305,6 +307,35 @@ identifiers from the real `invoice-detail.jpg` screenshot it replaced (`INV-2026
 page rather than becoming three disconnected mockups. `invoice-detail.jpg` itself is untouched and
 still used for real on `/features` (the "sales" feature chapter) — only the homepage's duplicate
 reference to it was removed.
+
+**Section 4a's screenshot was also swapped for a native diagram (2026-10-01):** same request, same
+treatment — revised once after the first pass. The first version was a small 2×2 stat card; the
+founder asked for something that actually covers what the real `dashboard.jpg` screenshot showed
+(that screenshot had also become blurry once scaled into this layout) and reflows properly across
+screen sizes rather than just shrinking. `src/components/proof-section.tsx` now builds a full
+"Dashboard" card: all six stat tiles (Revenue, Expenses, Net profit, Cash position, AR
+outstanding, AP outstanding — 2 columns on mobile, 3 on tablet, a single row of 6 from `lg:` up,
+via a `gap-px` background-divider grid so the internal borders stay correct at every column
+count), two built bar charts (Income vs expenses, AR ageing — real `<div>` bars scaled to pixel
+heights, shaped to echo the real charts' data, stacking to one column below `lg:` and sitting
+side by side above it), and the "Needs attention" list from the real screenshot (overdue invoice,
+negative-stock movement, each with a "Review" label). A teal "Always current" badge stands in for
+the copy's "computed fresh... every time the page loads" claim. All six figures are the real ones
+from the `dashboard.jpg` screenshot it replaced, continuing the same thread as the hero's card and
+Section 3's diagram. `dashboard.jpg` itself is untouched and still used for real on `/features`
+(the "product" feature chapter). Verified responsive at mobile/tablet/desktop widths via an
+in-page iframe technique (the browser automation's own window-resize tool had no effect in this
+environment) — all three breakpoints render correctly, bars included.
+
+**Worth flagging — this is a real trade-off, not just a style choice:** §2 of this document lists
+"Build trust" as one of the homepage's five funnel jobs, with Section 4a specifically named as the
+"Proof screen" part of that job. A screenshot _is_ trust — it's verifiable evidence the product
+exists and looks like this; a diagram, however accurate, is still something we drew. With both
+Section 3 and Section 4a now diagrams, **Section 4c's `vat-return.jpg` is the only real product
+screenshot remaining anywhere on the homepage.** This was executed because it was asked for
+directly and twice in a row with clear creative direction, not because the trade-off was weighed
+and accepted — if the trust cluster feels like it's lost its "proof" leg on review, Section 4a (or
+4c) reverting to a real screenshot is the fix, not a new diagram concept.
 
 **Hero illustration (experimental, outside this spec, 2026-10-01):** §3's Hero spec says the
 section should stay "almost entirely typographic." A native-diagram card was prototyped anyway,
