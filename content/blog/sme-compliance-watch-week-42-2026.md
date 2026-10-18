@@ -30,7 +30,7 @@ _This is our first weekly digest. It covers only two days, Saturday 17 and Sunda
 
 **7. Budget 2027 is on 12 Nov.** The Treasury says to expect reforms, not tax cuts. We'll cover what it means for your books.
 
-_Also this week:_ Friday's island-wide power failure is a reminder that books kept on one shop PC can go down with it. Cloud books keep running when the shop PC doesn't.
+_Also this week:_ Saturday's island-wide power failure (17 Oct) is a reminder that books kept on one shop PC can go down with it. Cloud books keep running when the shop PC doesn't.
 
 ## Next week
 
