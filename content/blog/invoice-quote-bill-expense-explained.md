@@ -1,7 +1,7 @@
 ---
 title: "Invoice vs quote vs bill vs expense: a plain-language guide"
 description: "Four words new business owners use interchangeably, four different documents that do different things to your books. Plus credit notes, debit notes, and where supplier payments fit."
-date: "2026-12-02"
+date: "2026-09-09"
 image: "/images/blog/invoice-quote-bill-expense-explained.svg"
 ---
 

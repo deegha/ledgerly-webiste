@@ -1,7 +1,7 @@
 ---
 title: "AR and AP ageing reports: what they tell you about your cash flow"
 description: "Two of the most useful reports in your books, and among the least read. What the ageing buckets mean, and the questions each report answers at a glance."
-date: "2026-12-09"
+date: "2026-09-09"
 image: "/images/blog/ar-ap-ageing-reports-explained.svg"
 ---
 

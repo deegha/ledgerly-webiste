@@ -1,7 +1,7 @@
 ---
 title: "VAT return filing in Sri Lanka: Schedules 01, 04 and 07 explained"
 description: "Everyone tells you a VAT return must be filed. Almost nobody explains the schedule structure underneath it — which is exactly where the errors happen."
-date: "2026-10-28"
+date: "2026-09-09"
 image: "/images/blog/vat-return-schedules-explained.svg"
 ---
 

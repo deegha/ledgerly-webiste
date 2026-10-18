@@ -1,7 +1,7 @@
 ---
 title: 'Why "we''ll sort the books at year end" is costing you money'
 description: "Leaving the bookkeeping until March feels efficient — one big session instead of constant small ones. It isn't. Here's what the delay actually costs, in money you can count."
-date: "2027-02-10"
+date: "2026-09-09"
 image: "/images/blog/year-end-bookkeeping-catch-up-cost.svg"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'Bank reconciliation explained: why "match to zero" matters'
 description: "Most guides tell you to reconcile your bank account. Few explain why the difference has to land on exactly zero, and what a non-zero difference is actually telling you."
-date: "2027-01-27"
+date: "2026-09-09"
 image: "/images/blog/bank-reconciliation-match-to-zero.svg"
 ---
 

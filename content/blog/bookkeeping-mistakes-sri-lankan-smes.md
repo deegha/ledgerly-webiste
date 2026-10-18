@@ -1,7 +1,7 @@
 ---
 title: "The real cost of bad bookkeeping: five mistakes Sri Lankan SMEs make"
 description: "Not generic 'remember to keep receipts' advice. Five errors that are specific to running a business in Sri Lanka — currency exposure, VAT misclassification, cash retail — and what each one actually costs."
-date: "2026-11-04"
+date: "2026-09-09"
 image: "/images/blog/bookkeeping-mistakes-sri-lankan-smes.svg"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Fixed asset depreciation: a simple guide for small business owners"
 description: "You bought a machine for LKR 1.2 million. It's not an expense this year, and it's not worth 1.2 million forever. Depreciation is how the books handle that — explained without the jargon."
-date: "2027-01-20"
+date: "2026-09-09"
 image: "/images/blog/fixed-asset-depreciation-simple-guide.svg"
 ---
 

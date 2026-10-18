@@ -1,7 +1,7 @@
 ---
 title: "What auditors actually look for in Sri Lankan SME accounts"
 description: "Written for the business owner, not the auditor. When a statutory audit applies to you, what the auditor is really testing, and the five things that turn a long audit into a short one."
-date: "2026-11-11"
+date: "2026-09-09"
 image: "/images/blog/sme-audit-requirements-sri-lanka.svg"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "VAT registration in Sri Lanka: a practical guide for new businesses"
 description: "Registering for VAT is the easy part. What most guides skip is what registration actually obligates you to produce afterwards — and that's the part that catches people out."
-date: "2026-10-21"
+date: "2026-09-09"
 image: "/images/blog/vat-registration-sri-lanka-guide.svg"
 ---
 
