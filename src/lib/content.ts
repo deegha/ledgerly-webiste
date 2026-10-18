@@ -45,7 +45,7 @@ function readCollection<T>(collection: "blog" | "help"): ContentEntry<T>[] {
 // (Asia/Colombo), written as "YYYY-MM-DD". A post dated in the future stays
 // hidden everywhere (list, post page → 404, footer, sitemap, JSON-LD) until
 // that day. Pages are statically built, so it appears after the next deploy —
-// the daily 00:15 Sri Lanka time scheduled rebuild in .github/workflows/deploy.yml.
+// i.e. the next merge to main on or after that date (no scheduled rebuild).
 function todayInColombo(): string {
   // en-CA formats as YYYY-MM-DD.
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Colombo" }).format(new Date());

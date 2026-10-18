@@ -9,10 +9,6 @@ on:
         description: "Branch to build and deploy"
         required: true
         default: "main"
-  # Daily rebuild at 00:15 Sri Lanka time (18:45 UTC) so future-dated blog
-  # posts go live on their date (see getBlogPosts in src/lib/content.ts).
-  schedule:
-    - cron: "45 18 * * *"
 
 concurrency:
   group: deploy
