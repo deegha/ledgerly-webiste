@@ -41,10 +41,28 @@ function readCollection<T>(collection: "blog" | "help"): ContentEntry<T>[] {
   });
 }
 
+// Blog date convention: `date` is the go-live day in Sri Lanka time
+// (Asia/Colombo), written as "YYYY-MM-DD". A post dated in the future stays
+// hidden everywhere (list, post page → 404, footer, sitemap, JSON-LD) until
+// that day. Pages are statically built, so it appears after the next deploy —
+// i.e. the next merge to main on or after that date (no scheduled rebuild).
+function todayInColombo(): string {
+  // en-CA formats as YYYY-MM-DD.
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Colombo" }).format(new Date());
+}
+
+// gray-matter turns an unquoted YAML date into a Date; normalise to YYYY-MM-DD.
+function postDay(date: string | Date): string {
+  return date instanceof Date ? date.toISOString().slice(0, 10) : String(date).slice(0, 10);
+}
+
 export function getBlogPosts(): ContentEntry<BlogFrontmatter>[] {
-  return readCollection<BlogFrontmatter>("blog").sort(
-    (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime(),
-  );
+  const today = todayInColombo();
+  return readCollection<BlogFrontmatter>("blog")
+    .filter((post) => postDay(post.frontmatter.date) <= today)
+    .sort(
+      (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime(),
+    );
 }
 
 export function getBlogPost(slug: string): ContentEntry<BlogFrontmatter> | undefined {
