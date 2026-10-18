@@ -1,7 +1,7 @@
 ---
 title: "Data protection and your accounting records: what Sri Lanka's PDPA means"
 description: "The Personal Data Protection Act gives people a right to have their data erased. Your books are full of personal data you're legally required to keep. Here's how those two facts reconcile."
-date: "2026-09-09"
+date: "2027-01-06"
 image: "/images/blog/pdpa-and-your-accounting-records.svg"
 ---
 

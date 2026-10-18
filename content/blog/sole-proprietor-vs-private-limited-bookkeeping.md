@@ -1,7 +1,7 @@
 ---
 title: "Sole proprietor vs private limited: what changes in your bookkeeping"
 description: "Company-formation guides tell you about liability and tax. They rarely tell you how the choice changes the books you have to keep — which is where the ongoing work actually is."
-date: "2026-09-09"
+date: "2026-11-18"
 image: "/images/blog/sole-proprietor-vs-private-limited-bookkeeping.svg"
 ---
 

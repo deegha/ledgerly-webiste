@@ -1,7 +1,7 @@
 ---
 title: "Multi-currency bookkeeping: a guide for Sri Lankan exporters and importers"
 description: "If you invoice in dollars or pay suppliers in euros, the rupee's movement between transaction and settlement is a real number in your accounts. Here's how to record it correctly."
-date: "2026-09-09"
+date: "2027-01-13"
 image: "/images/blog/multi-currency-bookkeeping-sri-lanka.svg"
 ---
 

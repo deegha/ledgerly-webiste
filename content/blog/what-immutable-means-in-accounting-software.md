@@ -1,7 +1,7 @@
 ---
 title: 'What "immutable" means in accounting software, and why it matters'
 description: '"Audit-grade" and "tamper-proof" get thrown around a lot. Here''s the actual concept underneath them, explained in plain language, with the test you can apply to any tool.'
-date: "2026-09-09"
+date: "2026-11-25"
 image: "/images/blog/what-immutable-means-in-accounting-software.svg"
 ---
 
