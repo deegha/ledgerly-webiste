@@ -1,6 +1,6 @@
 ---
 title: "SSCL yes, VAT no? What the Rs. 9m quarterly threshold means for your business"
-description: "Since 1 July 2026 you must register for SSCL once turnover passes Rs. 9m a quarter or Rs. 36m over four quarters, while VAT still starts at Rs. 15m a quarter or Rs. 60m a year. Here is how to check where you stand."
+description: "Since 1 July 2026 you must register for SSCL once turnover passes Rs. 9m a quarter or Rs. 36m over four quarters, while VAT still starts at Rs. 15m a quarter or Rs. 60m over any 12 months. Here is how to check where you stand."
 date: "2026-10-19"
 image: "/images/blog/sscl-threshold-rs-9m-not-vat-registered.svg"
 ---
@@ -44,7 +44,7 @@ Because the two thresholds now differ, some businesses are inside SSCL but still
 - **A trader whose July–September turnover was Rs. 11 million.** That is above Rs. 9 million, so SSCL registration applies. It is below Rs. 15 million, so the quarterly VAT test isn't met.
 - **A services firm with Rs. 48 million over the last four quarters.** That is above Rs. 36 million for SSCL and below Rs. 60 million for VAT.
 
-Broadly, that's a business turning over Rs. 36–60 million a year.
+Broadly, that's a business turning over Rs. 36–60 million over 12 months.
 
 **Two caveats before you decide you're in this group:**
 
