@@ -78,7 +78,7 @@ Ledgerly doesn't file your income tax return or submit it to RAMIS. It gives you
 
 Filing VAT as well? The September monthly and July–September quarterly VAT returns are due on **31 October**.
 
-**[Get started](https://ledgerly.lk/get-started) with Ledgerly.** One month free, then LKR 2,500 a month — a limited-time rate for anyone who starts before December 2026 (regularly LKR 3,000). One plan, every feature, no add-ons.
+**[Get started](https://www.ledgerly.lk/get-started) with Ledgerly.** One month free, then LKR 2,500 a month — a founding rate for anyone who starts before December 2026 (regularly LKR 3,000). One plan, every feature, no add-ons.
 
 Want help getting last year's records into order before 30 November? Email [contact@ledgerly.lk](mailto:contact@ledgerly.lk).
 
