@@ -9,9 +9,9 @@ image: "/images/blog/september-vat-return-due-31-october.svg"
 >
 > - **Already past — 20 October:** the VAT payment for September 2026 (tax type code 70, period code 26330).
 > - **Due Saturday 31 October:** the **monthly** VAT return for September 2026 (return period code 2633) and the **quarterly** VAT return for July–September 2026 (return period code 2630). Returns are filed online.
-> - As at the morning of Wednesday 21 October, the IRD's alerts and notices pages showed **no extension**.
+> - No extension had been announced on the IRD website as of 21 October 2026 (alerts and news pages checked that morning).
 
-The VAT payment for September was due on 20 October. What's still ahead is the **return**, the form that reports what you charged and what you can claim back. It's due on **31 October**, and the IRD hasn't announced any extension.
+The VAT payment for September was due on 20 October. What's still ahead is the **return**, the form that reports what you charged and what you can claim back. It's due on **31 October**. No extension had been announced on the IRD website as of 21 October 2026.
 
 ## What's due, and by when
 
@@ -43,12 +43,12 @@ The notice also says input tax credit can be disallowed for late filing. A retur
 Most of the work in a VAT return happens before you open the portal. For September (or July–September):
 
 1. **Every sales invoice issued in the period is recorded.** Include credit notes, which reduce output tax.
-2. **Your tax invoices are in the Gazette 2481/22 format.** This has been mandatory since 1 October 2026, so it applies to invoices you issue from now on. See our [2481/22 checklist](https://www.ledgerly.lk/blog/is-your-vat-invoice-2481-22-compliant).
+2. **Check the format of the tax invoices you issue now.** The revised format set by Gazette 2481/22 has been mandatory since 1 October 2026, after Gazette 2500/106 moved the start date from 1 July. See our [2481/22 checklist](https://www.ledgerly.lk/blog/is-your-vat-invoice-2481-22-compliant).
 3. **Every purchase you're claiming has a valid tax invoice** with your details on it. Check the supplier's TIN and the invoice date, since the 12-month limit runs from that date.
 4. **Imports are matched to their Customs Declarations**, with the date, for the 24-month limit.
 5. **Debit and credit notes from suppliers are recorded**, so input tax isn't overstated.
 6. **Your bank statements are reconciled for the period.** Sales and purchases in the books should match what actually went through the bank.
-7. **Your schedule figures add up to the return.** The IRD accepts VAT schedules by CSV upload, direct entry on the e-Service portal, or a Web API link from business software. Whichever you use, the numbers should come from the same records.
+7. **Your schedule figures add up to the return.** According to the IRD, RAMIS lets you submit the schedules for a VAT return by uploading Excel files in CSV format, by entering records directly through the IRD e-Service Portal, or through Web API integration between your ERP system and RAMIS. Whichever you use, the numbers should come from the same records.
 
 ## Why clean books make the return quicker
 
@@ -83,8 +83,9 @@ _This article is general information, not tax advice. Confirm your position with
 
 - IRD Tax Calendar 2026 (VAT payment for September 2026 due 20 Oct; monthly September and quarterly July–September VAT returns due 31 Oct), checked 21 Oct 2026: https://www.ird.gov.lk/en/publications/Tax%20Calendar_Documents/Tax_Calendar_2026_E.pdf
 - IRD notice to taxpayers, VAT: payment and return for September 2026 (payment by 20 Oct; return online by 31 Oct; late cheques; 12- and 24-month input tax limits), checked 21 Oct 2026: https://www.ird.gov.lk/en/Lists/Latest%20News%20%20Notices/Attachments/818/VAT_05102026_26330_E.pdf
-- IRD alerts and announcements (no extension listed), checked 21 Oct 2026: https://www.ird.gov.lk/en/SitePages/AlertsandAnnouncements.aspx?menuid=1418
-- IRD news and notices (no extension listed), checked 21 Oct 2026: https://www.ird.gov.lk/en/sitepages/news%20and%20notices.aspx
-- IRD notice SEC/PN/VAT/2026-03 on the VAT (Amendment) Act No. 14 of 2026 (VAT schedules by CSV upload, portal entry or Web API): https://www.ird.gov.lk/en/Lists/Latest%20News%20%20Notices/Attachments/799/PN_VAT_2026-03_New_E.pdf
+- IRD alerts and announcements (no extension announced as of 21 Oct 2026; checked 11:20 AM MYT): https://www.ird.gov.lk/en/SitePages/AlertsandAnnouncements.aspx?menuid=1418
+- IRD news and notices (no extension announced as of 21 Oct 2026; checked 11:20 AM MYT): https://www.ird.gov.lk/en/sitepages/news%20and%20notices.aspx
+- IRD notice SEC/PN/VAT/2026-03 on the VAT (Amendment) Act No. 14 of 2026, section 5 "Submission of VAT Schedules" (CSV upload, e-Service Portal entry or Web API): https://www.ird.gov.lk/en/Lists/Latest%20News%20%20Notices/Attachments/799/PN_VAT_2026-03_New_E.pdf
 - IRD Circular SEC/2026/E/03, revised tax invoice format (Gazette 2481/22): https://www.ird.gov.lk/en/publications/Circulars_Circulars/SEC_2026_E_03_E.pdf
+- KPMG Sri Lanka Tax Flash, August 2026 (Gazette 2500/106 moved mandatory compliance from 1 July to 1 October 2026): https://assets.kpmg.com/content/dam/kpmgsites/lk/pdf/kpmg-tax-news/2026/august/Value_Added_Tax_VAT_Invoice_Format_Postponement.pdf
 - Ledgerly features: https://ledgerly.lk/features
