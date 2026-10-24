@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@/components/analytics";
+import { GaInitScript } from "@/components/ga-init";
 import { siteUrl } from "@/lib/env";
 import "./globals.css";
 
@@ -58,6 +59,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <GaInitScript />
+      </head>
       <body className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
         {children}
         <Analytics />

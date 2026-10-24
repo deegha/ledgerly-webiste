@@ -6,7 +6,8 @@ import { trackCtaClick, trackOutboundClick } from "@/lib/analytics";
 
 /**
  * Internal primary call-to-action (a Next.js <Link>). Fires `cta_click` with the
- * `location` it was placed in, then lets navigation proceed as normal.
+ * `cta_location` it was placed in and the `link_url` it points at, then lets
+ * navigation proceed as normal.
  */
 export function CtaLink({
   location,
@@ -17,8 +18,13 @@ export function CtaLink({
   return (
     <Link
       {...props}
+      data-ga-tracked=""
       onClick={(e) => {
-        trackCtaClick(location, cta);
+        trackCtaClick(
+          location,
+          typeof props.href === "string" ? props.href : (props.href.pathname ?? ""),
+          cta,
+        );
         onClick?.(e);
       }}
     />
@@ -39,8 +45,9 @@ export function OutboundLink({
   return (
     <a
       {...props}
+      data-ga-tracked=""
       onClick={(e) => {
-        trackOutboundClick(event, { link_url: props.href, location });
+        trackOutboundClick(event, props.href, location);
         onClick?.(e);
       }}
     />

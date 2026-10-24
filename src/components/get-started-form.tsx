@@ -21,6 +21,10 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 export function GetStartedForm() {
   const [state, formAction, pending] = useActionState(submitLeadAction, initialState);
   const started = useRef(false);
+  // generate_lead must fire exactly once per successful submit. A success state
+  // replaces the form, so there's no second submit, but guard anyway (React
+  // strict-mode re-runs effects in dev; a re-render must not re-send).
+  const leadSent = useRef(false);
 
   // Fire once, on the visitor's first interaction with any field — pairs with
   // generate_lead below to give a form start → completion rate.
@@ -32,11 +36,17 @@ export function GetStartedForm() {
 
   useEffect(() => {
     if (state.status === "success") {
+      if (leadSent.current) return;
+      leadSent.current = true;
       // GA4 recommended event for a submitted lead — mark this as a Key event.
+      // Only fires after the server action confirmed the app accepted the lead
+      // (HTTP 2xx); validation and network errors land in the branch below.
+      // No form values are ever sent — only where the form was.
       trackEvent("generate_lead", { form_location: "get_started" });
     } else if (state.status === "error") {
       trackEvent("lead_form_error", {
         form_location: "get_started",
+        // A fixed server-side string (submit-lead.ts), never user input.
         error_message: state.message,
       });
     }
