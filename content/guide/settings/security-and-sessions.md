@@ -5,6 +5,7 @@ order: 8
 verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
 related:
   - /guide/settings/your-profile
+  - /guide/settings/signing-in-and-2fa
   - /guide/getting-started/inviting-your-team
 ---
 
@@ -39,4 +40,5 @@ Each row is one active sign-in:
 ## See also
 
 - [Your profile](/guide/settings/your-profile)
+- [Signing in, lockouts, and two-factor authentication](/guide/settings/signing-in-and-2fa)
 - [Inviting your team](/guide/getting-started/inviting-your-team)

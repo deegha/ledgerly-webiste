@@ -94,6 +94,23 @@ That's a correctly empty ledger, ready for its first document.
 
 ![A freshly onboarded dashboard for Riverstone Ceramics: all six stat cards reading LKR 0.00 and an empty activity feed](/guide/getting-started/onboarding-landed.jpg "A new organization's dashboard — an empty ledger, not a broken one")
 
+## Messages you might see when signing up
+
+- **"Sign-up needs an onboarding link from Ledgerly."** — sign-up was attempted without an
+  onboarding link. Self-service sign-up is switched off: opening the sign-up page without a link
+  shows "Self-service sign-up isn't available" instead of the wizard. Request a link from
+  [ledgerly.lk/get-started](https://ledgerly.lk/get-started) and open the wizard from it.
+- **"Too many sign-up attempts. Try again later."** — more than 10 sign-up attempts from your
+  network within an hour. Wait, then try again from your link.
+- **"We couldn't create an account with this email. If you already use Ledgerly, sign in and
+  open the link again."** — a Ledgerly login already exists for the link's email by the time you
+  click **Create organization**. Sign in with that email, then open the onboarding link again:
+  the company is added to your existing account instead.
+
+The link itself can also be refused when you open it: "This onboarding link isn't valid.",
+"This onboarding link has expired — ask Ledgerly.lk support for a new one.", "This onboarding
+link was revoked." or "This onboarding link has already been used."
+
 ## Common questions
 
 **Can I change the fiscal year or base currency later?** Not casually. Both are set here for a
