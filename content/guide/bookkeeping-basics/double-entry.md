@@ -2,7 +2,7 @@
 title: "What double-entry bookkeeping is"
 description: "Every transaction affects at least two accounts, and the two sides always match. That single rule is what makes the books trustworthy."
 order: 1
-verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
+verifiedAgainst: "invoicegen @ fd6950f (2026-10-24)"
 related:
   - /guide/bookkeeping-basics/debits-and-credits
   - /guide/bookkeeping-basics/journal-entries-and-posting
@@ -21,9 +21,10 @@ the amount taken from the other. Nothing is ever recorded once and left dangling
 
 ## What it looks like in Ledgerly
 
-Here is a single sale, as Ledgerly recorded it:
+Here is a single sale — five tins of cinnamon, invoiced as INV-2026-000005 — as Ledgerly
+recorded it:
 
-![A journal entry with four lines — Trade Receivables 4,500.00 debit, Sales Revenue 4,500.00 credit, Cost of Sales 1,750.00 debit, Inventory 1,750.00 credit — totalling 6,250.00 on each side](/guide/bookkeeping-basics/journal-entry.jpg "One sale, recorded against four accounts, with the two sides equal")
+![A posted journal entry, JE-2026-000024: status Posted, source INVOICE, dated 10/21/2026, with the note "Posted on Oct 24, 2026 by Demo Owner. JE-2026-000024 was posted by a document, so it can't be reversed here — void the invoice, or issue a credit note against it instead."; narration "Invoice INV-2026-000005"; four lines — 1200 Trade Receivables debit 4,500.00, 4000 Sales Revenue credit 4,500.00, 5000 Cost of Sales debit 1,750.00, 1500 Inventory credit 1,750.00 — totalling 6,250.00 on each side](/guide/bookkeeping-basics/journal-entry-invoice.webp "One sale, recorded against four accounts, with the two sides equal")
 
 Read it as two linked statements:
 
