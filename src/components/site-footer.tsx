@@ -45,6 +45,16 @@ export async function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/guide" className="text-ink-soft hover:text-ink">
+                  User guide
+                </Link>
+              </li>
+              <li>
+                <Link href="/guide/bookkeeping-handbook" className="text-ink-soft hover:text-ink">
+                  Bookkeeper&rsquo;s handbook
+                </Link>
+              </li>
+              <li>
                 <Link href="/help" className="text-ink-soft hover:text-ink">
                   Help centre
                 </Link>
