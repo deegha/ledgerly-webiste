@@ -38,6 +38,8 @@ the match (and says why) unless:
   reconciled point);
 - neither side is already matched.
 
+![The Reconcile screen: summary with statement balance 3,180,659.94, ledger balance 3,182,059.94, uncleared receipts 800,000.00 and payments 558,190.06, Difference 240,409.94 and Complete reconciliation disabled; the statement line Transfer to Colombo Freight & Logistics −95,866.06 and the ledger entry JE-2026-000021 Payment PAY-2026-000002 −95,866.06 are both selected, ready for Match selected; Service charges and SMS alert fee have nothing to match](/guide/bookkeeping-handbook/bank-reconcile.webp "Pick one line on each side with the same amount and direction, then Match selected")
+
 One statement line matches **one** ledger entry. A single bank deposit made up of several
 receipts can't be split across them, so record one receipt (or one journal) per bank line.
 

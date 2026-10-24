@@ -43,6 +43,8 @@ matching works on the GL account.
    balance**, exactly as printed on the statement. An overdrawn balance is negative.
 4. **Import statement** is enabled only when there are no errors.
 
+![Import a statement for a Sampath Bank savings account: the CSV preview with its column mapping (Date, Description, Reference to Cheque No, Money out to Withdrawals, Money in to Deposits, Running balance to Balance), 4 lines, money out 200,000.00 and money in 401,458.33, the file balances, the statement dates and balances filled in, and one warning that a balance row inside the table was skipped](/guide/bookkeeping-handbook/statement-import-preview.webp "The preview: check the column mapping, totals and warnings before you import")
+
 Import the **whole** statement, every line. Lines that aren't in your books yet (a bank charge,
 interest) are recorded and matched when you reconcile.
 
@@ -94,6 +96,8 @@ On the **Transactions** screen, expand the statement and click **Remove import**
 reason, and it's recorded in the audit trail. It's refused while any of the statement's lines are
 matched (unmatch them first) or when a reconciliation completed on or after the statement's start
 date covers it.
+
+![A bank account Transactions screen: the statement for 10/16/2026 – 10/22/2026 expanded, 0/2 matched, with its lines and an enabled Remove import button; the 10/1/2026 – 10/15/2026 statement collapsed, 3/7 matched](/guide/bookkeeping-handbook/bank-transactions-remove-import.webp "Remove import sits under each statement and works only while none of its lines are matched")
 
 Statements are never edited in place: **to correct an import, remove it and import again.** A
 removed import can't be restored; import the file again instead.

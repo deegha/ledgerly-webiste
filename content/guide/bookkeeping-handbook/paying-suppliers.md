@@ -34,6 +34,8 @@ related:
 8. Click **Record payment**. The bill becomes **PAID** or **PARTIALLY PAID**, and the payment gets
    a `PAY-` number.
 
+![Record payment for Colombo Freight & Logistics: Pay from 1100 Bank Accounts, Amount paid 208,710; in Apply to bills, BIL-2026-000006 ticked with Clear (gross) 217,710, WHT5 (5%) and WHT withheld 9,000, Cash 208,710.00; Unallocated 0.00. The posting preview debits 2000 Trade Payables 217,710.00 and credits 2200 WHT Payable 9,000.00 and 1100 Bank Accounts 208,710.00](/guide/bookkeeping-handbook/supplier-payment-wht.webp "WHT5 on the 180,000 pre-tax amount: the bill clears in full, the bank pays the rest")
+
 If there's no bill yet, enter the bill first, then pay it. A bill whose journal entry was
 reversed by hand (older data, from before Reverse was limited to manual journals) isn't offered
 in the grid: void it first.

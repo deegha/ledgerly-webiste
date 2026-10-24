@@ -35,6 +35,8 @@ result:
 - **Net payable** when output tax is more than input tax;
 - **Net refundable / credit carried forward** when it's less.
 
+![The VAT Return for Sep 01 – Sep 30, 2026, marked Working: output tax 72,000.00, zero-rated, exempt and note adjustments 0.00, input tax 219,510.00, and Net refundable / credit carried forward −147,510.00, with the note on what the return counts and a File return button](/guide/bookkeeping-handbook/vat-return.webp "More input tax than output tax: a credit carried forward")
+
 **What it counts:** the VAT on invoices, bills, expenses and credit/debit notes dated in the
 period. VAT paid to or refunded by the IRD and opening VAT balances are **not** part of the
 return, and neither are WHT, APIT or SSCL. So output tax should equal the month's VAT on 2100 from

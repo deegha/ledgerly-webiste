@@ -36,9 +36,13 @@ bill or expense form, but the full form shows the VAT and WHT fields, so it's sa
 8. Click **Create contact** (that's the button's label on the supplier form). The supplier gets a
    number, `SUP-0001` and so on.
 
+![The New supplier form filled in for a VAT-registered supplier: name, TIN, VAT registration no., the VAT registered switch on, email, phone, city and 30-day payment terms; Default purchase tax code set to VAT18 and Default WHT on payments set to WHT5, with the Create contact button at the bottom](/guide/bookkeeping-handbook/new-supplier-form.webp "WHT is withheld from the payment, never added to the bill")
+
 ## 2. Enter a bill (a supplier invoice you'll pay later)
 
 **Purchases → Bills → New bill.**
+
+![The Bills list: Number, Supplier ref, Date, Supplier, Due date, Total, Balance and Status columns, with Draft, Issued, Part-paid, Paid, Void and Discarded filters above it; bills show DRAFT, ISSUED, PARTIALLY PAID and PAID statuses](/guide/bookkeeping-handbook/bills-list.webp "Purchases → Bills: the Supplier ref column is where duplicates show up")
 
 1. **Supplier:** pick the supplier. If VAT applies, check it's the record with VAT registered on
    and a TIN.
@@ -72,6 +76,10 @@ bill or expense form, but the full form shows the VAT and WHT fields, so it's sa
    Yes/No, and a link to its journal entry. Check that Yes/No is what you expected (see
    [When input VAT is recoverable](/guide/bookkeeping-handbook/vat-sscl-and-wht#when-input-vat-is-recoverable)).
 
+![A new bill line with the Tax code list open, offering NOVAT, SSCL, VAT0, VAT18, VAT18S (20.95%) and VATEX; no WHT codes are listed](/guide/bookkeeping-handbook/bill-tax-code-dropdown.webp "The tax code list on a bill line: WHT codes are never offered")
+
+![A new bill from Ceylon Packaging Solutions, supplier invoice CP-4519: one line on 5000 Cost of Sales (10,000 × 28.50, VAT18) and one on 6260 Travel & Transport (4,500.00, VAT18); subtotal 289,500.00, tax 52,110.00, total 341,610.00. The posting preview debits 5000 285,000.00, 6260 4,500.00 and 1300 Input VAT 51,300.00 + 810.00, and credits 2000 Trade Payables 341,610.00](/guide/bookkeeping-handbook/new-bill-filled.webp "Each line carries its own account and tax code; check the posting preview before you click Issue")
+
 The issued bill's notice says "Issue a credit note to correct". For a bill, the correction is a
 **debit note** (see [Assets, debit notes and journals](/guide/bookkeeping-handbook/assets-notes-journals)),
 or a **Void** by an Owner or Accountant.
@@ -104,6 +112,8 @@ or a **Void** by an Owner or Accountant.
 ![The Record expense form: Vendor (contact) left empty, a typed Vendor name, Expense date, the Paid from list open showing 1000 Cash in Hand and 1100 Bank Accounts, and one line with Account, Amount and Tax code](/guide/bookkeeping-handbook/expense-paid-from.webp "Paid from only offers bank and cash accounts")
 
 ![The Record expense form filled in: typed vendor "Sample Stationery Shop", paid from 1100 Bank Accounts, one line 6000 Operating Expenses 5,000.00 with VAT18, total 5,900.00. The posting preview shows 5,900.00 to 6000 and 5,900.00 from 1100](/guide/bookkeeping-handbook/expense-filled.webp "A typed vendor name means no recoverable VAT, so the whole 5,900 is posted as cost")
+
+![Recorded expense EXP-2026-000003: the notice Expenses are final once recorded, vendor Lanka Office Mart (Pvt) Ltd paid from 1100 Bank Accounts, journal entry JE-2026-000019, one line of 6,800.00 plus 1,224.00 tax, total 8,024.00, and a Void button at the top right](/guide/bookkeeping-handbook/expense-detail.webp "A recorded expense: final, but an Owner or Accountant can Void it")
 
 A recorded expense can't be edited. The expense page still reads "Expenses are final once
 recorded", but an Owner or Accountant can **Void** it (with a reason and a void date), which posts

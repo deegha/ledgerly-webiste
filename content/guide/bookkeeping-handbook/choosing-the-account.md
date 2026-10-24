@@ -84,6 +84,8 @@ renumbered.
 | 2520 | ETF Payable              |      |                                           |
 | 2530 | APIT Payable             |      |                                           |
 
+![Accounting → Chart of accounts: Code, Name, Type and Balance columns with a lock on system accounts, from 1000 Cash in Hand down to the starter accounts under 6000 Operating Expenses; 2210 SSCL Payable sits between 2200 WHT Payable and 2300 Accruals](/guide/bookkeeping-handbook/chart-of-accounts.webp "Accounting → Chart of accounts")
+
 **Starter accounts** under 6000 (editable): 6200 Rent, 6210 Utilities, 6220 Professional Fees,
 6230 Software & Subscriptions, 6240 Marketing, 6250 Bank Charges, 6260 Travel & Transport.
 

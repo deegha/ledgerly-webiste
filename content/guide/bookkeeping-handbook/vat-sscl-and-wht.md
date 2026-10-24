@@ -22,6 +22,8 @@ related:
 | **WHT5**   | WHT on services                                  | 5%               | 2200 WHT Payable, on supplier payments only                             |
 | **WHT14**  | WHT on rent                                      | 14%              | 2200 WHT Payable, on supplier payments only                             |
 
+![Accounting → Tax codes: cards for NOVAT, SSCL (2.5%, posting to 2210 SSCL Payable), VAT0, VAT18, VAT18S with its compound note, VATEX, WHT14 and WHT5 (both posting to 2200 WHT Payable)](/guide/bookkeeping-handbook/tax-codes.webp "Accounting → Tax codes, as every organization starts")
+
 These are the rates as seeded. Confirm current rates on [ird.gov.lk](https://www.ird.gov.lk)
 with your accountant. A rate change is entered with **Add new rate** and an effective date (Owner
 or Accountant). If the VAT rate changes, add the new rate to **both VAT18 and VAT18S**. If the
@@ -77,6 +79,10 @@ The line shows the effective rate, 20.95%. When it posts, Ledgerly splits the ta
 - **On a sales invoice:** income stays at 100,000, the SSCL 2,500 goes to **2210 SSCL Payable**
   and the VAT 18,450 to **2100 Output VAT**. The invoice PDF and page show SSCL and VAT as
   separate amounts.
+
+![Issued bill BIL-2026-000006 from Colombo Freight & Logistics, supplier ref CFL-1008: two VAT18S lines, 145,000.00 with 30,377.50 tax and 35,000.00 with 7,332.50 tax; subtotal 180,000.00, tax 37,710.00, total 217,710.00; Input VAT recoverable Yes and a link to journal entry JE-2026-000011](/guide/bookkeeping-handbook/bill-detail-vat18s.webp "On the bill, each VAT18S line shows its combined tax at 20.95%")
+
+![The bill's journal entry JE-2026-000011: 6260 Travel & Transport debited 148,625.00 and 35,875.00 (net plus SSCL), 1300 Input VAT (Recoverable) debited 26,752.50 and 6,457.50, and 2000 Trade Payables credited 217,710.00](/guide/bookkeeping-handbook/bill-journal-sscl.webp "The journal splits it: SSCL is added to the cost on 6260, only the VAT goes to 1300, and nothing goes to 2210")
 
 If a supplier charges **only SSCL** (no VAT), use the **SSCL** code on its own; on a purchase the
 2.5% is part of the cost.

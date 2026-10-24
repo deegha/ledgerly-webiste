@@ -41,6 +41,8 @@ Registering an asset doesn't post anything, so the purchase has to be posted by 
 | **Depreciation expense account**     | **6900 Depreciation Expense** (the default)                                         |
 | **Accumulated depreciation account** | **1750 Accumulated Depreciation**                                                   |
 
+![The Register fixed asset form: a delivery van in category Vehicles, acquired Oct 20, 2026 for 6,500,000.00 with 500,000 salvage value, 60 months, straight line; cost account 1700, depreciation expense account 6900 Depreciation Expense and accumulated depreciation account 1750](/guide/bookkeeping-handbook/register-fixed-asset.webp "The account fields default to 1700, 6900 and 1750")
+
 Then click **Register asset**. Ledgerly checks that the cost account is a fixed-asset account, the
 accumulated account is an accumulated-depreciation account, and the depreciation account is an
 expense account.
@@ -99,6 +101,8 @@ A manual journal is the one posted document that accepts attachments after posti
 Entries posted by documents (bills, expenses, payments, invoices, notes) and by the system
 (depreciation, FX, year-end, opening balances) don't offer it; the page tells you the right
 correction instead, such as voiding the bill or recording a debit note.
+
+![The Journals list with the Manual only filter: JE-2026-000014, a reversal of JE-2026-000013, Posted; and JE-2026-000013, an accrued electricity journal for September 2026, now Void; both MANUAL, 42,000.00](/guide/bookkeeping-handbook/journals-manual-only.webp "Manual only shows the journals that can be reversed; a reversed one is marked Void")
 
 ## Customer payments
 
