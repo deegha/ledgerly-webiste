@@ -22,6 +22,12 @@ export const GUIDE_CHAPTERS: GuideChapterMeta[] = [
     description: "Double-entry, debits and credits, and how to read the core reports.",
   },
   {
+    slug: "bookkeeping-handbook",
+    title: "Bookkeeper's handbook",
+    description:
+      "The day-to-day routine: bills, expenses and supplier payments, VAT, SSCL and WHT, bank import and reconciliation, and month end.",
+  },
+  {
     slug: "accounting",
     title: "Accounting",
     description: "Chart of accounts, journals, periods, tax codes, fixed assets, budgets.",

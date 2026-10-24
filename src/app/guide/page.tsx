@@ -38,6 +38,13 @@ export default function GuideIndexPage() {
           </Link>
           .
         </p>
+        <p className="text-ink-faint mt-1 text-sm">
+          Keeping the books day to day?{" "}
+          <Link href="/guide/bookkeeping-handbook" className="text-brand-ink font-medium">
+            Start with the Bookkeeper&rsquo;s handbook
+          </Link>
+          .
+        </p>
       </div>
 
       <div className="flex flex-col gap-4">
