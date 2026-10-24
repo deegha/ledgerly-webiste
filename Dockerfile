@@ -18,8 +18,12 @@ COPY . .
 # or the CTA link silently bakes in an empty string.
 ARG NEXT_PUBLIC_APP_URL
 ARG NEXT_PUBLIC_SITE_URL
+# GA4 Measurement ID. Optional: when the build arg isn't passed this is "", and
+# src/lib/env.ts falls back to the live ID (G-11VTYDPV9P). "off" disables GA.
+ARG NEXT_PUBLIC_GA_MEASUREMENT_ID
 ENV NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL
 ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+ENV NEXT_PUBLIC_GA_MEASUREMENT_ID=$NEXT_PUBLIC_GA_MEASUREMENT_ID
 RUN npm run build
 
 # --- Runner ---

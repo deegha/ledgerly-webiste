@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { CtaLink } from "@/components/cta-link";
-import { trackEvent } from "@/lib/analytics";
+import { trackCtaClick } from "@/lib/analytics";
 import { LedgerTexture } from "@/components/ledger-texture";
 
 const TARGET = 4210875.6;
@@ -81,9 +81,8 @@ export function Hero() {
               </CtaLink>
               <a
                 href="#insight"
-                onClick={() =>
-                  trackEvent("cta_click", { cta: "see_how_it_works", location: "hero" })
-                }
+                data-ga-tracked=""
+                onClick={() => trackCtaClick("hero", "#insight", "see_how_it_works")}
                 className="border-rule-strong text-ink hover:bg-mist rounded-md border px-6 py-3 text-sm font-medium transition-colors"
               >
                 See how it works
