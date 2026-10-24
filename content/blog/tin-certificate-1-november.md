@@ -1,5 +1,5 @@
 ---
-title: "From 1 November, you'll need a TIN certificate to open a bank account. What to do this week, and what it means for your books"
+title: "TIN certificate needed from 1 November: what to do this week"
 description: "From 1 November 2026, residents aged 18 and over need a valid TIN certificate, or the IRD's e-Services verification printout, to open a bank account, register a business, get a credit card or transfer shares. Here's what to sort out between 26 and 30 October."
 date: "2026-10-24"
 image: "/images/blog/tin-certificate-1-november.svg"
