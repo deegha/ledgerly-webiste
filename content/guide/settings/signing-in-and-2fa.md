@@ -56,7 +56,7 @@ Try again in 15 minutes."
 
 Ledgerly doesn't issue **backup codes**, and there's no self-service way to reset 2FA if you
 lose your phone. Keep the manual entry key somewhere safe, or add it to a second device, when
-you set it up.
+you set it up. If you've lost access to your authenticator app, contact Ledgerly support.
 
 ### Turning it off
 
