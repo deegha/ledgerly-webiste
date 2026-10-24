@@ -1,8 +1,8 @@
 ---
 title: "Correcting an issued invoice with a credit note"
-description: "A credit note is the reversal, in sales form — full or partial. It always links to an origin invoice and posts its own entry."
+description: "A credit note is the reversal, in sales form — full or partial, up to what the invoice still owes. It links to the invoice it corrects and posts its own entry."
 order: 5
-verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
+verifiedAgainst: "invoicegen @ fd6950f (2026-10-24)"
 related:
   - /guide/sales/issuing-an-invoice
   - /guide/bookkeeping-basics/why-posted-entries-are-immutable
@@ -19,16 +19,28 @@ and reverses the revenue (and VAT, and cost of sales) for the amount credited.
 
 **Sales → Credit notes.**
 
-![The Credit notes list: Number, Date, Customer, Origin invoice, Total and Status columns; every row names an origin invoice and shows status Issued](/guide/sales/credit-notes-list.jpg "Sales → Credit notes — each one is tied to the invoice it corrects")
+![The Credit notes list: Number, Date, Customer, Origin invoice, Total and Status columns; every row names an origin invoice and shows status Issued](/guide/sales/credit-notes-list.jpg "Sales → Credit notes — each one tied to the invoice it corrects")
 
-Every credit note is **linked to an origin invoice** — there's no such thing as a free-standing
-one.
+Choose the invoice you're correcting in **Origin invoice**; it pre-fills the lines from that
+invoice, and the credit note reduces that invoice's balance. The note must be for the same
+customer and in the invoice's currency.
+
+The form lets you leave **Origin invoice** as "No linked invoice", but then the note isn't
+applied to any invoice's balance, and Ledgerly has no way yet to refund that credit or apply it
+to another invoice. When a credit note corrects an invoice, link it.
+
+## How much you can credit
+
+A credit note can't exceed what the invoice still owes. The form tells you the limit: "Up to …
+(INV-…'s open balance, VAT included) can be credited against this invoice." The open balance
+is the invoice total less receipts, advances and earlier credit notes applied to it.
 
 ## Full or partial
 
 - **Partial** — credit specific lines or quantities. The example below credits 2 units of
   Cables (4,000.00) against an invoice that had more on it.
-- **Full** — credit the entire invoice, e.g. to cancel it and re-issue a correct one.
+- **Full** — credit everything the invoice still owes, e.g. to cancel it and re-issue a
+  correct one.
 
 ## The credit note
 
@@ -39,17 +51,20 @@ It carries:
 - a **reason** — recorded on the document (here, "Returned faulty units")
 - the **origin invoice** it corrects (`INV-2026-000009`), as a link
 - its own **journal entry** (`JE-2026-000026`), as a link
-- and, like an invoice, it's **final once issued** — a mistake on a credit note is fixed with
-  another document, not an edit.
+- and, like an invoice, it's **final once issued** — it can't be edited. If the credit note
+  itself was a mistake, an Owner or Accountant can **Void** it: that posts the exact reverse of
+  its entry, and the linked invoice owes the credited amount again.
 
 ## Common questions
 
-**Does a credit note refund money?** No — it adjusts what the customer _owes_. If you also
-return cash, that's a separate payment out.
+**Does a credit note refund money?** No — it adjusts what the customer _owes_. Ledgerly doesn't
+have a customer refund flow yet; if you return cash to a customer, agree with your accountant
+how to record it.
 
-**The invoice was fully paid before I credited it.** The credit note leaves the customer with
-a credit balance (an unallocated amount in your favour to them), which you can apply to a
-future invoice or refund.
+**The invoice was fully paid before I credited it.** Ledgerly won't link a credit note to it:
+there's nothing left to credit. If it was paid, void the receipt applied to it first (that
+re-opens the invoice), issue the credit note, then record the receipt again — anything paid
+over becomes a [customer advance](/guide/sales/applying-a-customer-advance).
 
 ## See also
 
