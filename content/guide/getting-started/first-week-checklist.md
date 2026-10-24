@@ -2,7 +2,7 @@
 title: "A first-week checklist"
 description: "What to set up, and in what order, before you send your first invoice or record your first bill."
 order: 6
-verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
+verifiedAgainst: "invoicegen @ fd6950f (2026-10-24)"
 related:
   - /guide/getting-started/onboarding
   - /guide/getting-started/inviting-your-team
@@ -33,7 +33,8 @@ accounts once both have postings.
 
 ## 3. Check your tax codes
 
-Onboarding seeded VAT, SSCL, and WHT codes at current rates. If you're VAT-registered,
+Onboarding seeded VAT, SSCL, and WHT codes at current rates — including **VAT18S** for
+suppliers who charge VAT on an SSCL-inclusive price. See [Tax codes](/guide/accounting/tax-codes). If you're VAT-registered,
 confirm your registration number is on the organization profile and that the default codes
 match how you invoice. Rates are dated — a future rate change is a new dated rate, never an
 edit — so you don't need to pre-empt those.
@@ -54,9 +55,14 @@ the box; this is just making it yours. Preview it before you issue anything.
 ## 6. Enter opening balances
 
 If you're not starting from zero — you have money in the bank, customers who owe you,
-suppliers you owe — you need an **opening balances** entry so your first reports are right.
-This posts a single balanced journal dated the day before your first period starts. It's
-skippable during onboarding and resumable from Settings; don't skip it permanently.
+suppliers you owe — you need **opening balances** so your first reports are right. Date them
+the **first day of your first open period** (1 April if you start at the beginning of a
+fiscal year): a date before your first period can't post, because no period covers it.
+
+Onboarding's optional **Opening balances** step posts them as a single balanced journal. If
+you skipped it, there's no separate opening-balances screen afterwards — post them as a
+[manual journal entry](/guide/accounting/journals) on that date instead. Don't skip them
+permanently.
 
 ## 7. Add exchange rates (if you deal in foreign currency)
 

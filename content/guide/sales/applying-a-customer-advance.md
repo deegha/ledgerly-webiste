@@ -2,7 +2,7 @@
 title: "Applying a customer advance to an invoice"
 description: "A customer paid before you invoiced. The receipt sits in Customer Advances until you apply it to the invoice — no new money, one click, and the invoice settles."
 order: 7
-verifiedAgainst: "invoicegen @ 2026-09-07, Ceylon Spice Traders"
+verifiedAgainst: "invoicegen @ fd6950f (2026-10-24)"
 related:
   - /guide/sales/customer-payments
   - /guide/sales/issuing-an-invoice
@@ -31,10 +31,11 @@ _"Held as a customer advance (2400) — you can apply it to an invoice later."_
 ## Where to find it
 
 Open an **issued** or **partially paid** invoice for that customer. If they have an unapplied
-advance in the same currency, an **Apply customer advance** panel appears above the invoice
-totals.
+advance in the same currency, at the same exchange rate, a panel appears on the invoice:
+"This customer has LKR 250,000.00 in unapplied advances." It shows nothing if there's no such
+advance.
 
-![An issued invoice for Ceylon Spice Traders showing an "Apply customer advance" panel: the note "This customer has LKR 30,000.00 in unapplied advances", a dropdown to pick which receipt, an "Amount to apply" box pre-filled with 30,000.00, and an Apply button; a caption explains it posts Dr 2400 Customer Advances / Cr Trade Receivables](/guide/sales/apply-advance-panel.jpg "The Apply customer advance panel — it only shows when the customer has a same-currency advance to draw on")
+![Issued invoice INV-2026-000003 for Island Flavours Exports (Pvt) Ltd, LKR 2,100,000.00 for 300 units of cinnamon quills: below the line table, a blue panel reads "This customer has LKR 250,000.00 in unapplied advances.", with an Amount to apply box pre-filled with LKR 250,000.00, an Apply button, and the note "Applying RCP-2026-000003 posts Dr 2400 Customer Advances / Cr Trade Receivables and settles this invoice — no new payment is recorded."; under it, Amount paid 0.00 and Balance due 2,100,000.00](/guide/sales/apply-advance-panel.webp "The advance panel on an issued invoice — it only shows when the customer has an advance in the same currency, at the same rate")
 
 ## Applying one
 
@@ -42,34 +43,37 @@ totals.
 2. **Amount to apply** — pre-filled to the smaller of the invoice's balance due and the
    advance's remaining balance. Lower it if you only want to apply part.
 3. **Apply** — posts an entry (`Dr 2400 Customer Advances / Cr Trade Receivables`), tagged to
-   the original receipt so it's traceable. The invoice moves to `PARTIALLY PAID` or `PAID`,
-   and the receipt's **unallocated** figure drops by what you applied.
+   the original receipt so it's traceable. The panel says so before you click: "Applying
+   RCP-… posts Dr 2400 Customer Advances / Cr Trade Receivables and settles this invoice — no
+   new payment is recorded." The invoice moves to **Partially paid** or **Paid**, and the
+   receipt's **unallocated** figure drops by what you applied.
 
 One advance can be spread across several invoices — apply part of it to each until it's used
 up. Anything left over stays available for the next invoice.
 
 ## On the documents
 
-- The **invoice** shows an updated _Amount paid_ and _Balance due_, and the applied advance in
-  its payment history.
-- The **invoice PDF** gains a _Payments & credits_ block under the total —
-  `Advance applied · RCP-2026-000020 · −30,000.00` and a `Balance due` line — so the copy the
-  customer receives reflects the deposit they've already sent.
-- The **receipt** shows how much of it is now allocated and to which invoice.
+- The **invoice** shows an updated **Amount paid** and **Balance due**.
+- The **invoice PDF** lists the applied receipt under the total — its number (here
+  `RCP-2026-000003`), its date and the amount as a minus — followed by a **Balance due** line,
+  so the copy the customer receives reflects the deposit they've already sent.
+- The **receipt** (Sales → Customer payments) shows its **Allocated** and **Unallocated**
+  amounts, and the invoice it was applied to.
 
 ## Worked example
 
-A LKR 30,000 advance against a LKR 100,000 job:
+The advance in the screenshot above — LKR 250,000 against a LKR 2,100,000 zero-rated export
+invoice (no VAT):
 
-| Step                                 | Entry                                                     | Invoice status               |
-| ------------------------------------ | --------------------------------------------------------- | ---------------------------- |
-| Advance received (`RCP-2026-000020`) | Dr Bank 30,000 / Cr Customer Advances 30,000              | — no invoice yet             |
-| Invoice issued (`INV-2026-000030`)   | Dr Trade Receivables 100,000 / Cr Income 100,000          | `ISSUED`, 100,000 due        |
-| Advance applied                      | Dr Customer Advances 30,000 / Cr Trade Receivables 30,000 | `PARTIALLY PAID`, 70,000 due |
-| Balance paid (`RCP-2026-000021`)     | Dr Bank 70,000 / Cr Trade Receivables 70,000              | `PAID`, 0 due                |
+| Step                                         | Entry                                                       | Invoice status                    |
+| -------------------------------------------- | ----------------------------------------------------------- | --------------------------------- |
+| Advance received (`RCP-2026-000003`, 12 Oct) | Dr Bank 250,000 / Cr Customer Advances 250,000              | — no invoice yet                  |
+| Invoice issued (`INV-2026-000003`, 16 Oct)   | Dr Trade Receivables 2,100,000 / Cr Sales Revenue 2,100,000 | **Issued**, 2,100,000 due         |
+| Advance applied                              | Dr Customer Advances 250,000 / Cr Trade Receivables 250,000 | **Partially paid**, 1,850,000 due |
+| Balance paid (a second receipt)              | Dr Bank 1,850,000 / Cr Trade Receivables 1,850,000          | **Paid**, 0 due                   |
 
 At the end, Customer Advances is back to zero, Trade Receivables is clear, and the invoice is
-`PAID` — with two receipts and one advance-application entry behind it.
+**Paid** — with two receipts and one advance-application entry behind it.
 
 ## Common questions
 
@@ -83,12 +87,15 @@ in Customer Advances for the next invoice.
 same-rate advances only — a rate difference would leave a residual in Trade Receivables. For
 those, post a [manual journal entry](/guide/accounting/journals) (`Dr 2400 / Cr 1200`) instead.
 
-**I applied the wrong amount.** There's no one-click undo yet. Reverse the effect with a manual
-journal entry (`Dr Trade Receivables / Cr Customer Advances`); note that the invoice's status
-won't roll back on its own.
+**I applied the wrong amount.** An application can't be edited. An Owner or Accountant can
+**Void** the receipt: that reverses the receipt and every advance applied from it, and re-opens
+the invoices it settled. Then record the receipt again and apply the right amount. Ledgerly
+refuses the void if the receipt is matched to a bank statement line (unmatch it first) or is
+part of a completed bank reconciliation. Voiding the invoice also undoes an advance applied to
+it.
 
 **Nothing to apply?** No panel appears if the customer has no unapplied advance, if the invoice
-is a draft, or if the only advances are in a different currency.
+is a draft, or if the only advances are in a different currency or at a different rate.
 
 ## See also
 

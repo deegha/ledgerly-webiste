@@ -2,7 +2,7 @@
 title: "What Ledgerly is"
 description: "Ledgerly is a general ledger that documents post into — not an invoicing app with reports bolted on. Here's why that distinction matters for your books."
 order: 1
-verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
+verifiedAgainst: "invoicegen @ fd6950f (2026-10-24)"
 related:
   - /guide/bookkeeping-basics/double-entry
   - /guide/getting-started/onboarding
@@ -15,18 +15,19 @@ built the other way around: at its centre is a **general ledger** — the double
 every accountant and auditor already knows — and every screen you'll use is a way of putting
 entries into that ledger or reading them back out.
 
-When you issue an invoice, record a bill, run depreciation, or reconcile a bank account, you're
-not updating a standalone list. You're **posting a journal entry**. The invoice is the
+When you issue an invoice, record a bill or a payment, or run depreciation, you're not updating
+a standalone list. You're **posting a journal entry**. The invoice is the
 document; the journal entry is what it does to your books.
 
 ## Everything is a document that posts
 
-Here is the journal entry Ledgerly posted when Acme Trading issued a single invoice:
+Here is the journal entry Ledgerly posted when Lanka Spice Traders, our demo company, issued a
+single invoice:
 
-![A posted journal entry for invoice INV-2027-000001: Trade Receivables debited 4,500.00, Sales Revenue credited 4,500.00, Cost of Sales debited 1,750.00, Inventory credited 1,750.00, totals balanced at 6,250.00](/guide/getting-started/what-is-ledgerly.jpg "One invoice, four ledger lines — receivable, revenue, cost of sales, and the stock that left the warehouse")
+![A posted journal entry, JE-2026-000024: status Posted, source INVOICE, dated 10/21/2026, with the note "Posted on Oct 24, 2026 by Demo Owner. JE-2026-000024 was posted by a document, so it can't be reversed here — void the invoice, or issue a credit note against it instead."; narration "Invoice INV-2026-000005"; four lines — 1200 Trade Receivables debit 4,500.00, 4000 Sales Revenue credit 4,500.00, 5000 Cost of Sales debit 1,750.00, 1500 Inventory credit 1,750.00 — totalling 6,250.00 on each side](/guide/bookkeeping-basics/journal-entry-invoice.webp "One invoice, four ledger lines — receivable, revenue, cost of sales, and the stock that left the warehouse")
 
 Four lines, debits equal to credits, posted and stamped with who did it and when. The invoice
-screen hid all of this behind a **Save** button, but this entry is the real effect. Sell
+screen hid all of this behind its **Issue** button, but this entry is the real effect. Sell
 something and Ledgerly records the money you're owed, the revenue you earned, and — because
 this item is tracked stock — the cost of the goods and the inventory that left the building,
 all in one balanced entry.

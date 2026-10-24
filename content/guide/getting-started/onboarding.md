@@ -2,7 +2,7 @@
 title: "Signing up and onboarding"
 description: "How a new organization is created in Ledgerly, and what each step of the setup wizard decides."
 order: 2
-verifiedAgainst: "invoicegen @ 2026-08-31, Riverstone Ceramics (onboarding walkthrough)"
+verifiedAgainst: "invoicegen @ fd6950f (2026-10-24)"
 related:
   - /guide/getting-started/first-week-checklist
   - /guide/getting-started/what-is-ledgerly
@@ -54,8 +54,9 @@ least 12 characters with an uppercase letter, a lowercase letter, and a digit.
 Turn on **VAT registered** if your business is registered, then enter your **VAT registration
 number** and choose a **filing frequency** (monthly or quarterly).
 
-Either way, Ledgerly seeds the standard Sri Lankan tax codes — **VAT18, VAT0, VATEX, SSCL,
-WHT5, WHT14** — so you can start invoicing immediately. If you register for VAT later, you add
+Either way, Ledgerly seeds the standard Sri Lankan tax codes — **VAT18, VAT0, VATEX, NOVAT,
+SSCL, VAT18S, WHT5, WHT14** — so you can start invoicing immediately. See
+[Tax codes](/guide/accounting/tax-codes) for what each one does. If you register for VAT later, you add
 the registration number in Settings then.
 
 ## Step 4 — Chart of accounts
@@ -74,12 +75,14 @@ exists.
 ## Step 5 — Opening balances (optional)
 
 If you're moving to Ledgerly from another system, this step posts a single balanced journal
-entry with your account balances as at your start date. It has to balance — Ledgerly shows a
+entry with your account balances as at your start date. The **As at** date defaults to 1 April,
+the start of the standard fiscal year — change it if your start date is different. It has to balance — Ledgerly shows a
 running debit/credit total and an out-of-balance figure until it does.
 
-If you're starting from zero, **skip it**. You can post opening balances later from
-**Settings**; see the [first-week checklist](/guide/getting-started/first-week-checklist) for
-when you'd want to.
+If you're starting from zero, **skip it**. The step's note says you can add them later from
+Settings, but there's no opening-balances screen in Settings: post them later as a
+[manual journal entry](/guide/accounting/journals) instead. See the
+[first-week checklist](/guide/getting-started/first-week-checklist) for when you'd want to.
 
 ## Step 6 — Team (optional)
 

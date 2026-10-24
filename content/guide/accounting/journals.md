@@ -2,7 +2,7 @@
 title: "Journals and manual journal entries"
 description: "The list every auditor opens, when you'd post a manual entry by hand, and the checks that stand between you and posting."
 order: 2
-verifiedAgainst: "invoicegen @ 2026-08-31, Acme Trading"
+verifiedAgainst: "invoicegen @ fd6950f (2026-10-24)"
 related:
   - /guide/bookkeeping-basics/journal-entries-and-posting
   - /guide/accounting/accounting-periods
@@ -47,15 +47,32 @@ instead — they post the same entry and keep the sub-ledgers right.
    for you; you still enter the amounts.
 4. **Lines** — an account, an optional description, and an amount in **either** the debit
    **or** the credit column.
+5. **Supporting documents** — attach the working or the source document. If nothing is
+   attached, Ledgerly asks **Post without a supporting document?** before posting; **Post
+   anyway** goes ahead, and you can still add a file later from the entry page.
 
 **Post journal entry** stays disabled until the entry **balances** — total debits equal total
-credits. You also need the [`journal:post-manual`
+credits — and has a narration. It posts straight away; there's no draft stage for a manual
+journal. You also need the [`journal:post-manual`
 permission](/guide/getting-started/roles-and-permissions) (Owner or Accountant).
 
 ## After posting
 
-A manual entry is immutable like any other. Wrong one? **Reverse** it from its detail page and
-post a correct one. The reversal links back to the original, so the trail is complete.
+A manual entry is immutable like any other. Wrong one? Open it and click **Reverse**. Ledgerly
+asks **Reverse this journal entry?** and explains what happens: it posts an opposite entry
+dated today (Colombo time) and marks the original **Void**. Both stay in the ledger and cancel
+each other out, and the original shows which entry reversed it. This can't be undone. Then
+post the correct entry.
+
+**Reverse** appears only on posted **manual** entries:
+
+- A reversal can't itself be reversed. If something still needs correcting, post a new manual
+  journal.
+- An entry a document posted — an invoice, a bill, a payment, an expense — can't be reversed
+  from the journal. Correct the document instead: **Void** it, or issue a credit note against
+  an invoice or record a debit note against a bill. That keeps the document and the ledger in
+  step. See
+  [Why a posted entry can't be edited](/guide/bookkeeping-basics/why-posted-entries-are-immutable).
 
 ## See also
 
