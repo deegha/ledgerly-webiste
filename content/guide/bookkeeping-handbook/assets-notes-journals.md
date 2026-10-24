@@ -2,7 +2,7 @@
 title: "Assets, debit notes and journals"
 description: "Buying equipment and registering it, correcting a bill with a debit note, the manual journals a bookkeeper actually needs, and customer receipts."
 order: 6
-verifiedAgainst: "invoicegen @ 6936e9e (2026-10-24)"
+verifiedAgainst: "invoicegen @ 161f079 (2026-10-24)"
 related:
   - /guide/accounting/fixed-assets
   - /guide/purchases/debit-notes

@@ -2,7 +2,7 @@
 title: "Paying suppliers, WHT and prepayments"
 description: "Recording a supplier payment, withholding WHT on it, applying a prepayment to a bill later, and paying WHT over to the IRD."
 order: 5
-verifiedAgainst: "invoicegen @ 6936e9e (2026-10-24)"
+verifiedAgainst: "invoicegen @ 161f079 (2026-10-24)"
 related:
   - /guide/purchases/supplier-payments
   - /guide/bookkeeping-handbook/vat-sscl-and-wht

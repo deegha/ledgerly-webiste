@@ -21,7 +21,8 @@ wherever you're a member.
   everything you do. Changing it doesn't rewrite past entries' display; it updates going
   forward.
 - **Password** — enter your **current** password, then a **new** one (at least 12 characters,
-  mixed case, and a digit) twice.
+  mixed case, and a digit) twice. After five wrong current passwords, Ledgerly stops accepting
+  tries for up to 15 minutes ("Too many incorrect attempts. Try again in 15 minutes.").
 
 ## What you can't change here
 
@@ -30,9 +31,10 @@ to change, that's an Owner/support task, not a self-service one.
 
 ## Common questions
 
-**I changed my password — am I signed out elsewhere?** Check
-[Settings → Sessions](/guide/settings/security-and-sessions) and revoke any other sessions
-yourself if you want them ended.
+**I changed my password — am I signed out elsewhere?** Yes. Changing your password signs out
+every other session; the one you're using stays signed in. Resetting a forgotten password signs
+out every session. [Settings → Sessions](/guide/settings/security-and-sessions) shows what's
+left.
 
 ## See also
 

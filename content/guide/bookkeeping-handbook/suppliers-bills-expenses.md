@@ -2,7 +2,7 @@
 title: "Suppliers, bills and expenses"
 description: "Adding a supplier with the right VAT and WHT defaults, entering a supplier bill, and recording an expense you've already paid."
 order: 4
-verifiedAgainst: "invoicegen @ 6936e9e (2026-10-24)"
+verifiedAgainst: "invoicegen @ 161f079 (2026-10-24)"
 related:
   - /guide/purchases/suppliers
   - /guide/purchases/recording-a-bill

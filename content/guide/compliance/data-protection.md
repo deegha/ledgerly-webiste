@@ -32,9 +32,9 @@ statutory minimum** — you can't quietly under-retain a record the law says to 
 
 When someone asks you to erase their data:
 
-1. **Log the request** — pick the subject (a contact or a user) and record it. A countdown to
-   the **21-business-day deadline** starts; it turns **amber inside 5 days** and **red when
-   overdue**.
+1. **Log the request** — pick the subject (one of your organization's contacts, or a member of
+   your organization) and record it. A countdown to the **21-business-day deadline** starts; it
+   turns **amber inside 5 days** and **red when overdue**.
 2. **Review**, then **grant** or **refuse** it.
    - **Grant** → the person's identifying data (name, TIN, address, contact details) is
      **anonymised**, not deleted. The invoices, the amounts, the ledger entries all survive —
@@ -47,8 +47,8 @@ When someone asks you to erase their data:
 
 ## 3. Subject data export
 
-Look up a contact or user and **export everything held about them** as JSON or PDF — the PDPA
-right of access.
+Look up one of your organization's contacts or members and **export everything held about
+them** as JSON or PDF — the PDPA right of access.
 
 ## Who can do this
 

@@ -2,7 +2,7 @@
 title: "Importing a bank statement"
 description: "Linking a bank account, the CSV layouts Ledgerly recognises, the preview and checks before import, and removing a wrong import."
 order: 10
-verifiedAgainst: "invoicegen @ 6936e9e (2026-10-24)"
+verifiedAgainst: "invoicegen @ 161f079 (2026-10-24)"
 related:
   - /guide/banking/bank-accounts
   - /guide/banking/importing-a-statement

@@ -2,7 +2,7 @@
 title: "VAT, SSCL and WHT"
 description: "The tax codes, when input VAT is recoverable, how to enter SSCL with VAT using VAT18S, and why WHT never goes on a bill line."
 order: 8
-verifiedAgainst: "invoicegen @ 6936e9e (2026-10-24)"
+verifiedAgainst: "invoicegen @ 161f079 (2026-10-24)"
 related:
   - /guide/accounting/tax-codes
   - /guide/reports/vat-return

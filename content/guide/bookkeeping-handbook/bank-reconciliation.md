@@ -2,7 +2,7 @@
 title: "Reconciling the bank"
 description: "How the Reconcile screen works, what the difference means, the matching rules, and the month-end routine that gets it to zero."
 order: 11
-verifiedAgainst: "invoicegen @ 6936e9e (2026-10-24)"
+verifiedAgainst: "invoicegen @ 161f079 (2026-10-24)"
 related:
   - /guide/banking/reconciling
   - /guide/bookkeeping-handbook/bank-statement-import

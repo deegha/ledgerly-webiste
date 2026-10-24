@@ -2,7 +2,7 @@
 title: "Attaching source documents"
 description: "Where the attachment field is on each form, why it has to be used before you save, and how to name and keep the files."
 order: 9
-verifiedAgainst: "invoicegen @ 6936e9e (2026-10-24)"
+verifiedAgainst: "invoicegen @ 161f079 (2026-10-24)"
 related:
   - /guide/compliance/data-protection
 ---
@@ -27,9 +27,16 @@ The file uploads as soon as you pick it. Wait until it appears in the list befor
 ## How
 
 - Use one file per document: a PDF, or a clear photo of the whole receipt.
-- Keep each file under the size the form shows ("Up to 10MB per file").
+- Ledgerly accepts PDFs, images (PNG, JPEG, GIF, WebP, HEIC), and CSV, text, Excel, Word and
+  OpenDocument files (on bills, expenses, supplier payments and debit notes, **browse** lists only
+  images and PDFs). Any other type is refused, and so is a file whose contents don't match its
+  extension (for example a renamed file). The form then shows "Failed to upload" with the file
+  name and the reason.
+- Keep each file under the size the form shows ("Up to 10MB per file"). A larger file is
+  refused.
 - Name files before uploading, for example `2026-11-05_SupplierName_INV-4471.pdf`.
-- Open an attachment from the document's own page.
+- Open an attachment from the document's own page. A PNG, JPEG, GIF or WebP image opens in a
+  new tab; any other file, PDFs included, downloads to your computer instead.
 
 ## Forgot one?
 

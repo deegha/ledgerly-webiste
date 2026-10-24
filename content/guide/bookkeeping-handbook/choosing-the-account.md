@@ -2,7 +2,7 @@
 title: "Choosing the account"
 description: "Which accounts a bill or expense line can use, where common Sri Lankan business costs go, and the default chart of accounts."
 order: 7
-verifiedAgainst: "invoicegen @ 6936e9e (2026-10-24)"
+verifiedAgainst: "invoicegen @ 161f079 (2026-10-24)"
 related:
   - /guide/accounting/chart-of-accounts
   - /guide/bookkeeping-basics/chart-of-accounts

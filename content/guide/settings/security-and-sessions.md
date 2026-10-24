@@ -31,8 +31,10 @@ Each row is one active sign-in:
 - You signed in on a shared or public computer and forgot to sign out — **revoke** it from
   here.
 - You see a session you don't recognise — **revoke** it, then change your
-  [password](/guide/settings/your-profile).
-- You've lost a device — revoke every session except this one.
+  [password](/guide/settings/your-profile). Changing the password also signs out every other
+  session.
+- You've lost a device — revoke every session except this one, or change your password, which
+  does the same.
 
 ## See also
 

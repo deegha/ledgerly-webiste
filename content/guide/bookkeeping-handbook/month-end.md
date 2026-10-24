@@ -2,7 +2,7 @@
 title: "Month end"
 description: "The reports to check once the month's bills, expenses and payments are in, how to read the VAT return, and how to post tax payments to the IRD."
 order: 13
-verifiedAgainst: "invoicegen @ 6936e9e (2026-10-24)"
+verifiedAgainst: "invoicegen @ 161f079 (2026-10-24)"
 related:
   - /guide/reports/vat-return
   - /guide/reports/trial-balance
